@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Form</title>
+    <title>Smart Form Homepage</title>
     <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
     <link rel="stylesheet" href="plugins/w3/w3.css">
     <script src="plugins/jquery-3.3.1-dist/jquery.min.js"></script>
@@ -79,6 +79,21 @@
             animation-timing-function: linear;
         }
     </style>
+
+    <script>
+        $( document ).ready(function() {
+          $("#btnJoinUs").click(function() {
+            window.location.href = 'http://127.0.0.1/fpy_github/signupHTML.php?#';
+          });
+          $("#btnLogin").click(function() {
+            window.location.href = 'http://127.0.0.1/fpy_github/loginHTML.php?#';
+          });
+          $("#logo").click(function() {
+            window.location.href = 'http://127.0.0.1/fpy_github/homepageHTML.php?#';
+          });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -88,12 +103,10 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #EEE8E5;">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="index.html">
-                <div class="row">
-                    <div class="col col-lg-2"></div>
-                    <div class="col-md-auto"><img src="img/IconsPSD.png" alt="" width="50" height="50" class=""></div>
-                </div>
-            </a>
+            <div class="row" id="logo">
+                <div class="col col-lg-2"></div>
+                <div class="col-md-auto"><img src="img/IconsPSD.png" alt="" width="50" height="50" class=""></div>
+            </div>
 
             <div class="row">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -108,9 +121,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><small>繁</small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><small>簡</small></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="signin.html"><small>Profile</small></a>
@@ -148,43 +158,11 @@
                         accountable.
                         <br><br> We provide a platform for you to create welfare that changing the world.</span>
                     <br><br>
-                    <form action="signup.html">
-                        <button class="button-smartform w3-right">&nbsp;Manage Form&nbsp;</button>
-                    </form>
-                    <form action="signin.html">
-                        <button class="button-smartform w3-right">&nbsp;Join Us!&nbsp;</button>
-                    </form>
+                        <button class="button-smartform w3-right" id="btnLogin">&nbsp&nbsp&nbsp;Login&nbsp&nbsp;&nbsp</button>
+                        <button class="button-smartform w3-right" id="btnJoinUs">&nbsp;Join Us!&nbsp;</button>
                     </p>
                     <br><br>
-                    <p style="color:#987468;"><b style="font-size:180%;">About Our Team</b><br>
-                    <div class="w3-quarter">
-                        <span><img src="img/Samantha.png" class="w3-circle sth-center" alt="Samantha"
-                                style="width:100%;max-width:150px;">
-                            <br><br>
-                            <h6 class="w3-center">LAU Wing Yin</h6>
-                        </span>
-                    </div>
 
-                    <div class="w3-quarter">
-                        <span><img src="img/Cinna.png" class="w3-circle sth-center" alt="Cinna"
-                                style="width:100%;max-width:150px"></span>
-                        <br><br>
-                        <h6 class="w3-center">CHEUNG Tsz Yin</h6></span>
-                    </div>
-
-                    <div class="w3-quarter">
-                        <span><img src="img/Wenni.png" class="w3-circle sth-center" alt="Wenni"
-                                style="width:100%;max-width:150px"></span>
-                        <br><br>
-                        <h6 class="w3-center">YEUNG Wai Yin</h6></span>
-                    </div>
-
-                    <div class="w3-quarter">
-                        <span><img src="img/Cyrus.png" class="w3-circle sth-center" alt="Cyrus"
-                                style="width:100%;max-width:150px"></span>
-                        <br><br>
-                        <h6 class="w3-center">LAU Ka Pui</h6>
-                    </div>
                     <br><br><br><br><br><br><br><br><br><br>
                     <p class="w3-center" style="font-size:90%; color:#B58767;"> We are studying Higher Diploma
                         in Creative Media (Web & App).
