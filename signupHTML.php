@@ -49,13 +49,14 @@
         }
       });
       $('#createForm').on('submit', function(e){
+
           if ($('#password_input').val() != $('#password2').val()){
               e.preventDefault();
               alert("The password is not match");
           }else if($("#contactNumber").val().length != 8){
             e.preventDefault();
             alert("The contact number is wrong format");
-          }else if($("#faxNumber").val().length != 8){
+          }else if($("#faxNumber").val().length != 8 && $("#faxNumber").val().length != 0){
             e.preventDefault();
             alert("The fax number is wrong format.");
           }else if($("#orgNumber").val().length != 11){
@@ -82,7 +83,7 @@
             <p class="fw-lighter small">* Must be filled</p>
             <p>
                 <label for="uname" style="color:#B19F97;">*Organization Name</label>
-                <input type="text" id="orgName"name="uname" class="form-control" placeholder="e.g. Social Welfare Department"
+                <input type="text" id="orgName"name="orgname" class="form-control" placeholder="e.g. Social Welfare Department"
                     required>
             </p>
 
@@ -93,7 +94,7 @@
 
             <p>
                 <label for="email" style="color:#B19F97;">*Email Address</label>
-                <input type="email" id="email" pname="email" class="form-control" placeholder="e.g. swdenq@swd.gov.hk" required>
+                <input type="email" id="email" name="email" pname="email" class="form-control" placeholder="e.g. swdenq@swd.gov.hk" required>
             </p>
 
             <p>
@@ -103,7 +104,7 @@
 
             <p>
                 <label for="brnum" style="color:#B19F97;">*SR/BR Number (the first 11 digits)</label>
-                <input type="number" id="orgNumber"name="brnum" class="form-control" placeholder="e.g. 12345678123" required>
+                <input type="number" id="orgNumber"name="orgNum" class="form-control" placeholder="e.g. 12345678123" required>
             </p>
 
             <p>
