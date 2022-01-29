@@ -2,15 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Form - Sign Up</title>
-    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
-    <link rel="stylesheet" href="plugins/w3/w3.css">
-    <script src="plugins/jquery-3.3.1-dist/jquery.min.js"></script>
-    <script src="plugins/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="plugins/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <?php include 'format/HTMLheader.php';?>
     <style>
         /* Bordered form */
         .form2 {
@@ -80,48 +73,7 @@
 </head>
 
 <body style="background-color:#EEE8E5;">
-    <a id="scroll" style="display: none;"><span></span></a>
-
-    <!-- nav -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff;">
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="index.html">
-                <div class="row">
-                    <div class="col col-lg-2"></div>
-                    <div class="col-md-auto"><img src="img/IconsPSD.png" alt="" width="50" height="50" class=""></div>
-                </div>
-            </a>
-
-            <div class="row">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><small>Eng</small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><small>繁</small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><small>簡</small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signin.html"><small>Profile</small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><small>Setting</small></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </nav>
+  <?php include 'format/HTMLbar.php';?>
     <!-- nav end -->
 
     <form id="createForm" action="signup.php" method="POST" class="form2 needs-validation">
