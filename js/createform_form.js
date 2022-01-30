@@ -116,6 +116,7 @@ $(document).ready(function () {
         i--;
         return false;
     });
+    
     Sortable.create(
         $tableBody[0],
         {
