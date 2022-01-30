@@ -17,7 +17,14 @@
   $query = $userRef->where('orgID', '=', $_POST['orgNum']);
   $result = $query->documents();
 
-  if(isset($result)){
+  foreach ($result as $result) {
+      if ($result->exists()) {
+        $exist = true;
+        break;
+      }else{
+      }
+    }
+  if($exist){
     echo '<script>alert("The organizational or company number has been used.")</script>';
   }else{
     $db->collection('organization_user')->add($data);
