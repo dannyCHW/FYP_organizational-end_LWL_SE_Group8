@@ -1,13 +1,6 @@
 <?php
-  require_once 'vendor/autoload.php';
+  include('firebaseConfig.php');
 
-  use Google\Cloud\Firestore\FirestoreClient;
-
-  $projectId = 'lwl-se-fyp-2122-grp8';
-
-  $db = new FirestoreClient([
-      'projectId' => $projectId,
-  ]);
   $data = [
     'orgName' => $_POST['orgname'],
     'number' => $_POST['pnum'],
@@ -16,12 +9,15 @@
     'orgID' => $_POST['orgNum'],
     'address' => $_POST['address'],
     'password' => $_POST['pw'],
-    'aboutOrganization' => $_POST['aboutOrganization']
+    'aboutOrganization' => $_POST['aboutOrganization'],
+    'state' => 'nonVerify'
   ];
-  $citiesRef = $db->collection('samples/php/cities');
-  $query = $citiesRef->where('orgID', '=', $_POST['orgNum']);
-  $snapshot = $query->documents();
-  if(isset($snapshot)){
+
+  $userRef = $db->collection('organization_user');
+  $query = $userRef->where('orgID', '=', $_POST['orgNum']);
+  $result = $query->documents();
+
+  if(isset($result)){
     echo '<script>alert("The organizational or company number has been used.")</script>';
   }else{
     $db->collection('organization_user')->add($data);
