@@ -12,7 +12,7 @@
     'aboutOrganization' => $_POST['aboutOrganization'],
     'state' => 'nonVerify'
   ];
-
+  $exist = false;
   $userRef = $db->collection('organization_user');
   $query = $userRef->where('orgID', '=', $_POST['orgNum']);
   $result = $query->documents();
@@ -24,7 +24,7 @@
       }else{
       }
     }
-  if($exist){
+  if($exist === TRUE){
     echo '<script>alert("The organizational or company number has been used.")</script>';
   }else{
     $db->collection('organization_user')->add($data);
