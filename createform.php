@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $serviceName = $_POST['serviceName'];
 $summary = $_POST['summary'];
@@ -30,7 +31,8 @@ $service_Doc_data = [
     'dateStart' => $dateStart,
     'dateEnd' => $dateEnd,
     'money' => $money,
-    'terms' => $terms
+    'terms' => $terms,
+    'status' => 'unVerify'
 ];
 
 $addedDocRef_service = $db->collection('service')->add($service_Doc_data);
@@ -58,7 +60,7 @@ for ($x = 0; $x < sizeof($questionList); $x++) {
 
 }
 
-echo"backFormPHP: OK";
+echo"";
 
 
 ?>

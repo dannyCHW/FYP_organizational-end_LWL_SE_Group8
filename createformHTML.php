@@ -285,20 +285,31 @@
     //originated from createform.js---- }
 
     function finlishSubmit() {
-        var questionArray = new Array();
-        var haveUnselect = false;
+        $('#wizard').attr('action', 'javascript:sending();');
 
-        //check for mistakes
+        var questionArray = new Array();
+        var haveUnselectQuestionType = false;
+        var haveNull = false;
+
+        //check for empty required field
+        if(!$('#serviceName').val() || 
+        !$('#summary').val() ||
+        !$('#target').val() ||
+        !$('#terms').val()){
+            haveNull = true;
+        }
 
         $("#recipeTableBody").children().each(function(index) {
             if ($(this).children().siblings().eq(1).children().val() == 'unSelect') {
-                haveUnselect = true;
+                haveUnselectQuestionType = true;
             }
         });
 
         //check bool flags
-        if (haveUnselect) {
+        if (haveUnselectQuestionType) {
             alert('one or more qeustion type haven\'t been selected.');
+        }else if(haveNull){
+            alert('one or more required field is empty.');
         } else {
             //extarct the data
 
@@ -366,6 +377,10 @@
             });
 
         }
+    }
+
+    function sending(){
+        alert('pls wait for a second');
     }
 
 
