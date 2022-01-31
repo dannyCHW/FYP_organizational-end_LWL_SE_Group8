@@ -29,26 +29,39 @@
         .container {
             padding: 12px 40px;
         }
+
+
     </style>
+    <script>
+    $( document ).ready(function() {
+
+    });
+      </script>
 </head>
 
 <body style="background-color:#EEE8E5;">
   <?php include 'format/HTMLbar.php';?>
     <!-- nav end -->
 
-    <form action="form.html" method="" class="form2 needs-validation" novalidate>
+    <form id="loginForm" action="login.php" method="POST" class="form2 needs-validation" novalidate>
         <div class="container w3-content">
             <h5 style="font-size:150%; color:#8A5122;" class="container w3-center"><b>Sign In</b></h5>
+
+              <label style="color:#B19F97;">Identity:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <input type="radio" id="identity" name="identity" class="radio_style" value="adminitor" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adminitor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="radio" id="identity" name="identity" class="radio_style" value="organization_user" checked>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Organzational user&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br /><br />
+
             <p>
-                <label for="uid" style="color:#B19F97;">ID:</label>
-                <input type="text" name="uid" class="form-control" required>
+                <label for="uid" style="color:#B19F97;">Email:</label>
+                <input type="text" name="email" class="form-control" required>
                 <label style="font-size:80%; color:#2715FF;"><a href="#" style="text-decoration: none;">Forgot
-                        ID?</a></label>
+                        Email?</a></label>
             </p>
 
             <p>
                 <label for="pw" style="color:#B19F97;">Password:</label>
-                <input type="password" name="pw" class="form-control" required>
+                <input type="password" id="pw" name="pw" class="form-control" required>
                 <label style="font-size:80%; color:#2715FF;"><a href="#" style="text-decoration: none;">Forgot
                         password?</a></label>
             </p>

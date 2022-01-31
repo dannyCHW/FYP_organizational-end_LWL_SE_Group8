@@ -2,17 +2,8 @@
 require_once 'vendor/autoload.php';
 
 use Google\Cloud\Firestore\FirestoreClient;
-use Kreait\Firebase\Contract\Auth;
 
 $projectId = 'lwl-se-fyp-2122-grp8';
-
-class MyService
-{
-    public function __construct(Auth $auth)
-    {
-        $this->auth = $auth;
-    }
-}
 
 $db = new FirestoreClient([
     'projectId' => $projectId,

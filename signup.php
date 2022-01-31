@@ -27,7 +27,8 @@
   if($exist === TRUE){
     echo '<script>alert("The organizational or company number has been used.")</script>';
   }else{
+
     $db->collection('organization_user')->add($data);
-    echo '<script>alert("Account create successful! Please confirm the email.")</script>';
+    header('Location: http://www.google.com/');
   }
 ?>
