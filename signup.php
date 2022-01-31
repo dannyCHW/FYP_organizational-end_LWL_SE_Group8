@@ -26,9 +26,13 @@
     }
   if($exist === TRUE){
     echo '<script>alert("The organizational or company number has been used.")</script>';
+    echo "<a href=\"javascript:history.go(-1)\">GO BACK</a>";
   }else{
 
     $db->collection('organization_user')->add($data);
-    header('Location: http://www.google.com/');
+    echo "<script>
+    alert('Account created, you can login now.');
+    window.location.href='homepageHTML.php';
+    </script>";
   }
 ?>

@@ -37,9 +37,13 @@
       $_SESSION['email'] = $_POST['email'];
       $_SESSION['type'] = $identity;
       $_SESSION['state'] = $state;
+      $_SESSION['identity'] = $identity;
       echo '<script>alert("Login successful , welcome.")</script>';
-      if($state == "admin"){
+      if($identity == "adminitor"){
         //admin lobby
+        echo "<script>
+        window.location.href='adminLobbyHtml.php';
+        </script>";
       }else{
         //org lobby
       }
