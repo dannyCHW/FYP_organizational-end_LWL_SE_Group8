@@ -11,6 +11,7 @@
     <script src="plugins/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="plugins/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    
 </head>
 
 <body style="background-color: #eee8e5;">
@@ -148,7 +149,7 @@
                         <div class="form-header">
                             <h3>Question Setting</h3>
                         </div>
-                        <div class="badge bg-primary text-wrap text-start">
+                        <!-- <div class="badge bg-primary text-wrap text-start">
                             <h6>Please set up within 20 questions (multiple choice questions are preferred) to reduce
                                 the difficulty of filling in the form for the elderly and low-educated
                             </h6>
@@ -157,7 +158,7 @@
                             the array, </p>
                         <p class="fw-lighter">e.g. Living with family, Property with mortgage, Property without
                             mortgage, Rental apartment, Public housing</p>
-                        <div class="recipe">
+                        <div class="recipe"> -->
                             <!-- <div class="recipe__info">
                                 <h2 class="recipe__title">Banana muffins recipe</h2>
                             </div> -->
@@ -215,18 +216,6 @@
                 </tr>
             </script>
 
-            <!-- addInput -->
-            <script id="addInput" type="text/template">
-                <input class="form-control form-control-sm form-row-h" list="datalistOptions"
-                    id="{arrayInputChild}" placeholder="Array" required>
-                    <datalist id="datalistOptions">
-                    <option value="Living with family, Property with mortgage, Property without
-                    mortgage, Rental apartment, Public housing">
-                    <option value="18-29, 30-49, 50-64">
-                    <option
-                        value="HK$0-10,000, HK$10,001-30,000, HK$30,001-70,000, HK$70,001 or above">
-                    </datalist>
-            </script>
         </form>
     </div>
 
@@ -264,23 +253,6 @@
             $("#wizard").steps('previous');
         });
     });
-
-
-    function changeInput(select_val, input_id) {
-        var obj = document.createElement('div');
-        var e = document.getElementById(select_val);
-        var strUser = e.options[e.selectedIndex].value;
-        if (strUser === '0' || strUser === '3') {
-            var obj2 = document.getElementById(input_id + 'child');
-            if (obj2 == null) {
-                obj.innerHTML = document.getElementById('addInput').innerHTML
-                    .replace(/{arrayInputChild}/g, input_id + 'child');
-                document.getElementById(input_id).appendChild(obj);
-            }
-        } else {
-            document.getElementById(input_id + 'child').remove();
-        }
-    }
 
     //originated from createform.js---- }
 
@@ -372,7 +344,8 @@
                 data: passData,
                 cache: false,
                 success: function(data) {
-                    alert(data);
+                    alert('Service created.');
+                    window.location.href = 'form_idHTML.php?serviceID=' + data;
                 }
             });
 

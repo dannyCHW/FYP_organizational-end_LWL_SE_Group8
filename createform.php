@@ -60,7 +60,7 @@ for ($x = 0; $x < sizeof($questionList); $x++) {
 
 }
 
-echo"";
+echo $service_id;
 
 
 ?>
