@@ -49,7 +49,7 @@
             <h5 style="font-size:150%; color:#B19F97;" class="container w3-center">Your Form ID number</h5>
             <p class="container w3-center">
                 <span style="font-size:90%; color:#B19F97;">Please save the Form ID number for reference.</span><br>
-                <span style="font-size:200%; color:#B19F97;"><?php $_GET['serviceID'] ?></span>
+                <span style="font-size:200%; color:#B19F97;"><?php echo $_GET['serviceID']; ?></span>
             </p>
 
             <p class="w3-center">

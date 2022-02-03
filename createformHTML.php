@@ -11,12 +11,75 @@
     <script src="plugins/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="plugins/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    
+
 </head>
 
 <body style="background-color: #eee8e5;">
 
-    <?php require_once 'header.html'; ?>
+    <link rel="stylesheet" href="plugins/material-design-iconic-font/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="css/createform_form.css">
+    <script src="plugins/jquery-3.3.1-dist/jquery.steps.js"></script>
+    <!-- <script src="js/createform_form.js"></script> -->
+    <script src="js/Sortable.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+
+    <a id="scroll" style="display: none;"><span></span></a>
+
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff;">
+        <div class="container-fluid">
+
+            <a class="navbar-brand logo-mobile-field-center" href="index.html">
+                <div class="row">
+                    <div class="col col-lg-2"></div>
+                    <div class="col-md-auto"><img src="img/IconsPSD.png" alt="" width="50" height="50" class="logo-mobile">
+                    </div>
+                </div>
+            </a>
+
+            <div class="row">
+                <div class="col d-flex align-items-center">
+                    <a href="#" class="btn btn-primary" style="background-color: #987468; min-width: 17.5vh;">Back
+                        to Panel</a>
+                </div>
+                <!-- <div class="col d-flex align-items-center">
+                <img src="img/published_with_changes_black_24dp.svg" height="20" id="loading">
+                <br><small style="color: #999;">&nbsp;Auto-save is On</small>
+            </div> -->
+                <div class="col">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <!-- <li class="nav-item">
+                            <a class="nav-link" href="#"><small>Eng</small></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><small>繁</small></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><small>簡</small></a>
+                        </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="signin.html"><small>Profile</small></a>
+                            </li>
+                            <!-- <li class="nav-item">
+                            <a class="nav-link" href="#"><small>Setting</small></a>
+                        </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- nav end -->
+
+
+
+    <a id="scroll" style="display: none;"><span></span></a>
 
     <div class="wrapper">
         <form id="wizard" action="javascript:finlishSubmit();" method="" class="was-validated">
@@ -130,11 +193,6 @@
                                     <input type="file" class="form-control form-color2" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept=".jpg, .jpeg, .png, .tiff, .svg" required>
                                     <!-- <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button> -->
                                 </div>
-                                <br><br><small><b>Acceptable file format:</b><br>&nbsp;&nbsp;jpg, jpeg, png, tiff,
-                                    svg<br><b>File size:</b><br>&nbsp;&nbsp;&lt;10MB<br><b>For a Portrait Poster
-                                        Size:</b><br>&nbsp;&nbsp;A4 size in pixels 300dpi: 3508 x 2480
-                                    px (without bleed area)<br><b>For a Landscape Banner
-                                        Size:</b><br>&nbsp;&nbsp;3508 x 1240 px (without bleed area)</small>
                             </div>
                         </div>
                     </div>
@@ -159,29 +217,29 @@
                         <p class="fw-lighter">e.g. Living with family, Property with mortgage, Property without
                             mortgage, Rental apartment, Public housing</p>
                         <div class="recipe"> -->
-                            <!-- <div class="recipe__info">
+                        <!-- <div class="recipe__info">
                                 <h2 class="recipe__title">Banana muffins recipe</h2>
                             </div> -->
 
-                            <div class="d-flex justify-content-center">
-                                <div class="recipe__ingredients">
-                                    <table cellpadding="0" cellspacing="0" class="recipe-table" id="recipeTable">
-                                        <tbody id="recipeTableBody">
+                        <div class="d-flex justify-content-center">
+                            <div class="recipe__ingredients">
+                                <table cellpadding="0" cellspacing="0" class="recipe-table" id="recipeTable">
+                                    <tbody id="recipeTableBody">
 
-                                            <!-- append the question-->
+                                        <!-- append the question-->
 
-                                        </tbody>
-                                    </table>
-                                    <div class="recipe-table__add-row">
-                                        <span class="recipe-table__add-row-btn"><br><b>+</b></span>
-                                    </div>
-
+                                    </tbody>
+                                </table>
+                                <div class="recipe-table__add-row">
+                                    <span class="recipe-table__add-row-btn"><br><b>+</b></span>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
             <!-- addRow -->
             <script id="rowTemplate" type="text/template">
                 <tr>
@@ -194,7 +252,7 @@
                             <option value="shortAns">Short Answer</option>
                             <option value="hkid">HKID/Passport Number</option>
                             <option value="yORn">Yes/No</option>
-                            <option value="mc">Multiple Choice</option>
+                            
 
                         </select>
                     </td>
@@ -257,17 +315,16 @@
     //originated from createform.js---- }
 
     function finlishSubmit() {
-        $('#wizard').attr('action', 'javascript:sending();');
 
         var questionArray = new Array();
         var haveUnselectQuestionType = false;
         var haveNull = false;
 
         //check for empty required field
-        if(!$('#serviceName').val() || 
-        !$('#summary').val() ||
-        !$('#target').val() ||
-        !$('#terms').val()){
+        if (!$('#serviceName').val() ||
+            !$('#summary').val() ||
+            !$('#target').val() ||
+            !$('#terms').val()) {
             haveNull = true;
         }
 
@@ -280,11 +337,14 @@
         //check bool flags
         if (haveUnselectQuestionType) {
             alert('one or more qeustion type haven\'t been selected.');
-        }else if(haveNull){
+        } else if (haveNull) {
             alert('one or more required field is empty.');
         } else {
-            //extarct the data
 
+            //change the submit button to prevent multiple submission
+            $('#wizard').attr('action', 'javascript:sending();');
+
+            //extarct the data
             var tmp_serviceName = $('#serviceName').val();
             var tmp_summary = $('#summary').val();
             var tmp_target = $('#target').val();
@@ -352,7 +412,7 @@
         }
     }
 
-    function sending(){
+    function sending() {
         alert('pls wait for a second');
     }
 

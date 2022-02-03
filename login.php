@@ -8,7 +8,7 @@
   $search = false;
   $pwd = "";
   $state="";
-  $docId='';
+  $user_docId='';
 
   $userRef = $db->collection($identity);
   $query = $userRef->where('email', '=', $_POST['email']);
@@ -16,7 +16,7 @@
 
   foreach ($documents as $documents) {
       if ($documents->exists()) {
-        $docId = $documents->id();
+        $user_docId = $documents->id();
         $pwd = $documents->data()['password'];
         $state = $documents->data()['state'];
         $search = true;
@@ -36,7 +36,7 @@
               window.location.href = 'loginHTML.php';
               </script>";
   }else if($input_password == $pwd){
-      $_SESSION['doc_id'] = $docId;
+      $_SESSION['$user_docId'] = $user_docId;
       $_SESSION['email'] = $_POST['email'];
       $_SESSION['type'] = $identity;
       $_SESSION['state'] = $state;
