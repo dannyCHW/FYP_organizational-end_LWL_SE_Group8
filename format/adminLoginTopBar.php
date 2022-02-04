@@ -28,6 +28,9 @@
             <a class="nav-link" href="verifyAccountHTML.php"><small>Verify Account</small></a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="auditWelfareHTML.php"><small>Audit Welfare</small></a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#"><small>Profile</small></a>
           </li>
           <li class="nav-item">
