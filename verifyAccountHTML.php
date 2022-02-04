@@ -56,7 +56,7 @@
 </head>
 
 <body style="background-color: #eee8e5;">
-
+    <?php include 'checkSession/adminCheckSession.php';?>
     <?php include 'format/adminLoginTopBar.php';?>
   <!-- nav end -->
 

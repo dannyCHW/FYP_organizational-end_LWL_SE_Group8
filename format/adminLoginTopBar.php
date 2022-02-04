@@ -9,7 +9,7 @@
         <div class="col col-lg-2"></div>
         <div class="col-md-auto"><img src="img/IconsPSD.png" alt="" width="50" height="50" class=""></div>
       </div>
-    </a>  
+    </a>
 
     <div class="row">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -28,10 +28,13 @@
             <a class="nav-link" href="verifyAccountHTML.php"><small>Verify Account</small></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="signin.html"><small>Profile</small></a>
+            <a class="nav-link" href="#"><small>Profile</small></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="signin.html"><small>KPI Report</small></a>
+            <a class="nav-link" href="#"><small>KPI Report</small></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./checkSession/logoutSession.php"><small>Logout</small></a>
           </li>
         </ul>
       </div>
