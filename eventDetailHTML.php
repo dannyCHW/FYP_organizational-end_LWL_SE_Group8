@@ -20,18 +20,7 @@
   </style>
   <script>
     $( document ).ready(function() {
-      $("#vtable #btnDetail").click(function(){
-        var eventID = $(this).parents('tr').find("td:eq(4)").text();
-        ////
-        $.ajax({
-          type: "POST",
-          url:"auditWelfareAjax.php",
-          data:{'eventID':eventID},
-          success:function(result){
-            window.location.href = "eventDetailHTML.php";
-        }});
-        ////
-      });
+
     });
   </script>
 </head>
@@ -46,19 +35,16 @@
   <main>
     <div class="center" >
       <div class="form-header">
-          <h3>Verify Account:</h3>
+          <h3>Event Detail</h3>
       </div>
-      <table style="width:100%;margin=0px;margin-bottom:300px;" id="vtable">
-        <thead style="font-size:20px;font-weight:bold;color:black;height:100px;">
+      <table style="width:100%;margin=0px;margin-bottom:300px;table-layout:fixed;font-size:25px;" id="vtable">
+        <thead>
           <tr>
-            <th>Event Name</th>
-            <th>Org Name</th>
-            <th>Start Date</th>
-            <th>More Detail</th>
-            <th hidden>Event ID</th>
+            <th style="text-align:center;">Column</th>
+            <th style="text-align:center;">Value</th>
           </tr>
         </thead>
-        <?php include 'eventList.php';?>
+        <?php include 'eventDetail.php';?>
       </table>
 
     </div>

@@ -2,27 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Form - Form</title>
-    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
-    <script src="plugins/jquery-3.3.1-dist/jquery.min.js"></script>
-    <script src="plugins/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="plugins/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-
+  <?php include 'format/HTMLheader.php';?>
 </head>
 
 <body style="background-color: #eee8e5;">
 
-    <link rel="stylesheet" href="plugins/material-design-iconic-font/css/material-design-iconic-font.css">
-    <link rel="stylesheet" href="css/createform_form.css">
-    <script src="plugins/jquery-3.3.1-dist/jquery.steps.js"></script>
-    <!-- <script src="js/createform_form.js"></script> -->
-    <script src="js/Sortable.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js"></script>
+  <?php include 'format/bodyStyle.php';?>
 
     <a id="scroll" style="display: none;"><span></span></a>
 
@@ -252,7 +237,7 @@
                             <option value="shortAns">Short Answer</option>
                             <option value="hkid">HKID/Passport Number</option>
                             <option value="yORn">Yes/No</option>
-                            
+
 
                         </select>
                     </td>

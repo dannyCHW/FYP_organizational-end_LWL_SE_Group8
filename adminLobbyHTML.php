@@ -26,7 +26,7 @@
             <h1>Get started</h1>
             <p class="fs-5 col-md-8">Quickly and easily get started with Smart Form.</p>
             <div class="mb-5">
-              <a href="createform.html" class="btn btn-primary btn-lg px-4" style="background-color: #987468;">Create
+              <a href="#" class="btn btn-primary btn-lg px-4" style="background-color: #987468;">Create
                 Your
                 Welfare</a>
             </div>
