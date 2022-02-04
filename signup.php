@@ -1,5 +1,8 @@
 <?php
   include('firebaseConfig.php');
+  require 'vendor/autoload.php';
+
+  use Google\Cloud\Storage\StorageClient;
 
   $data = [
     'orgName' => $_POST['orgname'],
@@ -30,6 +33,9 @@
   }else{
 
     $db->collection('organization_user')->add($data);
+/////
+
+/////
     echo "<script>
     alert('Account created, you can login now.');
     window.location.href='homepageHTML.php';

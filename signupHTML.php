@@ -49,7 +49,6 @@
         }
       });
       $('#createForm').on('submit', function(e){
-
           if ($('#password_input').val() != $('#password2').val()){
               e.preventDefault();
               alert("The password is not match");
@@ -66,7 +65,6 @@
             e.preventDefault();
             alert("The documentary proof must be submit.");
           }else{
-
           }
       });
     });
@@ -140,9 +138,9 @@
                 <label for="promotional" style="color:#B19F97;">Organazation documentary proof<br><small>&nbsp;&nbsp;Acceptable file format:&nbsp;&nbsp;doc, pdf, txt,
                         svg<br>&nbsp;&nbsp;File size:&nbsp;&nbsp;&lt;10MB<br></small></label>
                 <br>
-                <input type="file" id="document" name="filename" class="form-control" accept=".pdf, .doc, .txt">
+                <input type="file" id="file" name="file" class="form-control" accept=".doc, .txt">
             </p>
-
+                <input type="text" id="path" name="path" hidden>
             <br>
             <p class="w3-center">
                 <button type="submit" name="signupFormSubmit" class="button-smartform2">&nbsp;Submit&nbsp;</button>

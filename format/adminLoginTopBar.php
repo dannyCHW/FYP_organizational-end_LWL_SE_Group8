@@ -4,12 +4,12 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff;">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="adminLobbyHtml.php">
       <div class="row">
         <div class="col col-lg-2"></div>
         <div class="col-md-auto"><img src="img/IconsPSD.png" alt="" width="50" height="50" class=""></div>
       </div>
-    </a>
+    </a>  
 
     <div class="row">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -25,7 +25,7 @@
             <a class="nav-link" href="#"><small>繁</small></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><small>Verify Account</small></a>
+            <a class="nav-link" href="verifyAccountHTML.php"><small>Verify Account</small></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="signin.html"><small>Profile</small></a>
