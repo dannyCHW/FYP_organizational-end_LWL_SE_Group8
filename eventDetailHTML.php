@@ -11,11 +11,15 @@
   <script src="plugins/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="plugins/bootstrap-5.0.2-dist/css/bootstrap.min.css">
   <style>
-   tr th { }
+   tr th {
+     text-align:center;
+    }
    tr td{
      color:black;
      font-weight:bold;
-
+     text-align:center;
+     height: 40px;
+     border: 1px solid black;
    }
   </style>
   <script>
@@ -37,14 +41,24 @@
       <div class="form-header">
           <h3>Event Detail</h3>
       </div>
-      <table style="width:100%;margin=0px;margin-bottom:300px;table-layout:fixed;font-size:25px;" id="vtable">
+      <table style="width:100%;margin=0px;table-layout:fixed;font-size:25px;" id="vtable">
         <thead>
           <tr>
-            <th style="text-align:center;">Column</th>
-            <th style="text-align:center;">Value</th>
+            <th>Column</th>
+            <th>Value</th>
           </tr>
         </thead>
         <?php include 'eventDetail.php';?>
+      </table>
+
+      <table style="width:100%;margin=0px;margin-top:80px;margin-bottom: 200px;table-layout:fixed;font-size:25px;" id="vtable">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Question</th>
+          </tr>
+        </thead>
+        <?php include 'questionDetail.php';?>
       </table>
 
     </div>
