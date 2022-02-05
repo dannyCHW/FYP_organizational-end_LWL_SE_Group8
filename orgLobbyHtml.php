@@ -16,6 +16,7 @@
 
 <body style="background-color: #eee8e5;">
     <?php include 'checkSession/orgUserCheckSession.php';?>
+    <?php include 'format/orgTopBar.php';?>
   <!-- nav end -->
 
   <!-- main body -->

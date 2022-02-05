@@ -45,12 +45,12 @@
       if($identity == "adminitor"){
         //admin lobby
         echo "<script>
-        window.location.href='adminLobbyHtml.php';
+        window.location.href='adminLobbyHTML.php';
         </script>";
       }else{
         //org lobby
         echo "<script>
-        window.location.href='orgLobbyHtml.php';
+        window.location.href='orgLobbyHTML.php';
         </script>";
       }
   }
