@@ -11,7 +11,7 @@
   $eventID = $_SESSION['$eventDetailID'];
 
   $db->collection('service')->document($eventID)->update([
-    ['path' => 'status', 'value' => 'verify']
+    ['path' => 'status', 'value' => 'verified']
   ]);
 
  ?>

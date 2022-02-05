@@ -49,6 +49,9 @@
         </script>";
       }else{
         //org lobby
+        echo "<script>
+        window.location.href='orgLobbyHtml.php';
+        </script>";
       }
   }
 
