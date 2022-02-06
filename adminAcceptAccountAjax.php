@@ -21,7 +21,7 @@
   }
 
 $db->collection('organization_user')->document($docId)->update([
-  ['path' => 'state', 'value' => 'verify']
+  ['path' => 'state', 'value' => 'active']
 ]);
 
 

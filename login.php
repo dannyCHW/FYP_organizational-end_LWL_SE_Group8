@@ -35,7 +35,12 @@
       echo "<script type='text/javascript'>
               window.location.href = 'loginHTML.php';
               </script>";
-  }else if($input_password == $pwd){
+  }elseif($state != "active"){
+    echo '<script>alert("This account not verify yet.")</script>';
+    echo "<script type='text/javascript'>
+            window.location.href = 'loginHTML.php';
+            </script>";
+  }    else if($input_password == $pwd){
       $_SESSION['$user_docId'] = $user_docId;
       $_SESSION['email'] = $_POST['email'];
       $_SESSION['type'] = $identity;
