@@ -29,12 +29,18 @@
             padding: 12px 40px;
         }
     </style>
+
+    <script>
+        $( document ).ready(function() {
+
+        });
+    </script>
 </head>
 
 <body style="background-color:#EEE8E5;">
     <a id="scroll" style="display: none;"><span></span></a>
 
-    <?php require_once 'header.html'; ?>
+    <?php require_once 'format/orgTopBar.php'; ?>
 
     <form action="javascript:out();" method="post" class="form2">
         <div class="container w3-content">
@@ -45,7 +51,7 @@
             </p>
 
             <p class="w3-center">
-                <button type="submit" class="button-smartform2">&nbsp;Confirm&nbsp;</button>
+                <button type="submit" id="btnConfrim"class="button-smartform2">&nbsp;Confirm&nbsp;</button>
                 <br>
                 <br>
             </p>
@@ -85,7 +91,7 @@
 <script src="js/main.js"></script>
 <script>
     function out(){
-        window.location.href = 'formHTML.php';
+        window.location.href = 'orgLobbyHTML.php';
     }
 </script>
 </html>

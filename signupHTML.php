@@ -65,6 +65,13 @@
             e.preventDefault();
             alert("The documentary proof must be submit.");
           }else{
+            $.ajax({
+                   type :"POST",
+                   url  : "signupDocumentPathAjax.php",
+                   data:{'path':$("#file").val()},
+                   success : function(result) {
+                  }
+             })
           }
       });
     });

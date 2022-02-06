@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   include('firebaseConfig.php');
   require 'vendor/autoload.php';
 
@@ -29,7 +31,9 @@
     }
   if($exist === TRUE){
     echo '<script>alert("The organizational or company number has been used.")</script>';
-    echo "<a href=\"javascript:history.go(-1)\">GO BACK</a>";
+    echo "<script>
+    window.location.href='homepageHTML.php';
+    </script>";
   }else{
 
     $db->collection('organization_user')->add($data);
@@ -37,7 +41,7 @@
 
 /////
     echo "<script>
-    alert('Account created, you can login now.');
+    alert('Account created, please waiting verify.');
     window.location.href='homepageHTML.php';
     </script>";
   }
