@@ -12,7 +12,7 @@
             sleep(1);
 
         echo "<script type='text/javascript'>
-            window.location.href = 'loginHTML.php.php';
+            window.location.href = 'loginHTML.php';
             </script>";
 
     }

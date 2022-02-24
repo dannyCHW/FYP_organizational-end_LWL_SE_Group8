@@ -18,12 +18,11 @@ $dateStart = $_POST['dateStart'];
 $dateEnd = $_POST['dateEnd'];
 $money = $_POST['money'];
 $terms = $_POST['terms'];
+$tmp_autoOptions = json_encode($_POST['autoFillOptions']);
+$autoFillOptions = "{autoFillOptions:".$tmp_autoOptions."}";
 $questionList = $_POST['questionList'];
 
-$tmp = $questionList[0];
-$tmp2 = json_encode($tmp);
-$tmp3 = json_decode($tmp2);
-$question_type = $tmp3->question_type;
+//echo $autoFillOptions;
 
 require_once 'firebaseConfig.php';
 
@@ -38,6 +37,7 @@ $service_Doc_data = [
     'dateEnd' => $dateEnd,
     'money' => $money,
     'terms' => $terms,
+    'autoFillOptions' => $autoFillOptions,
     'status' => 'unVerify'
 ];
 

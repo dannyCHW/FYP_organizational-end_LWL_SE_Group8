@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-  <?php include 'format/HTMLheader.php';?>
+    <?php include 'format/HTMLheader.php'; ?>
 </head>
 
 <body style="background-color: #eee8e5;">
 
-    <?php include 'format/bodyStyle.php';?>
-    <?php include 'checkSession/orgUserCheckSession.php';?>
+    <?php include 'format/bodyStyle.php'; ?>
+    <?php include 'checkSession/orgUserCheckSession.php'; ?>
 
     <!-- nav -->
-    <?php include 'format/orgTopBar.php';?>
+    <?php include 'format/orgTopBar.php'; ?>
     <!-- nav end -->
 
 
@@ -142,7 +142,7 @@
                 <div class="inner">
                     <div class="form-content">
                         <div class="form-header">
-                            <h3>Question Setting</h3>
+                            <h3>Questions</h3>
                         </div>
                         <!-- <div class="badge bg-primary text-wrap text-start">
                             <h6>Please set up within 20 questions (multiple choice questions are preferred) to reduce
@@ -158,8 +158,19 @@
                                 <h2 class="recipe__title">Banana muffins recipe</h2>
                             </div> -->
 
+
                         <div class="d-flex justify-content-center">
                             <div class="recipe__ingredients">
+                                <!-- Auto Fill option here -->
+                                <h4>Basic Infomation</h4></br>
+                                <input type="checkbox" value="hkid" id="cb_hkid" />HKID number &nbsp;
+                                <input type="checkbox" value="engName" id="cb_engName" />English name &nbsp;
+                                <input type="checkbox" value="chName" id="cb_chName" />Chinese name &nbsp;
+                                <input type="checkbox" value="birthday" id="cb_birthday" />Birthday &nbsp;
+                                <input type="checkbox" value="gender" id="cb_gender" />Gender &nbsp;
+                                <!-- Auto Fill option here -->
+                                </br>
+                                <hr />
                                 <table cellpadding="0" cellspacing="0" class="recipe-table" id="recipeTable">
                                     <tbody id="recipeTableBody">
 
@@ -187,7 +198,7 @@
                             onchange="changeInput('{arraySelectID}', '{arrayInputID}')"  required>
                             <option value="unSelect" selected>Question Types</option>
                             <option value="shortAns">Short Answer</option>
-                            <option value="hkid">HKID/Passport Number</option>
+                            <!-- <option value="hkid">HKID/Passport Number</option> -->
                             <option value="yORn">Yes/No</option>
 
 
@@ -281,7 +292,45 @@
             //change the submit button to prevent multiple submission
             $('#wizard').attr('action', 'javascript:sending();');
 
-            //extarct the data
+            //extarct basic info checkbox
+            var basicInfoArray = new Array;
+
+            if ($('#cb_hkid').prop("checked") == true) {
+                basicInfoArray.push(($('#cb_hkid').val()));
+            }
+
+            if ($('#cb_chName').prop("checked") == true) {
+                basicInfoArray.push(($('#cb_chName').val()));
+            }
+
+            if ($('#cb_engName').prop("checked") == true) {
+                basicInfoArray.push(($('#cb_engName').val()));
+            }
+
+            if ($('#cb_birthday').prop("checked") == true) {
+                basicInfoArray.push(($('#cb_birthday').val()));
+            }
+
+            if ($('#cb_gender').prop("checked") == true) {
+                basicInfoArray.push(($('#cb_gender').val()));
+            }
+
+            var basicInfo;
+            if (Array.isArray(basicInfoArray) && basicInfoArray.length) {
+                var tmp_optionJsonArr = new Array();
+                for (let i = 0; i < basicInfoArray.length; i++) {
+                    var jsonOption = {
+                        option: basicInfoArray[i]
+                    };
+                    tmp_optionJsonArr.push(jsonOption);
+                }
+                basicInfo = tmp_optionJsonArr;
+                JSON.stringify(basicInfo);
+            } else {
+                basicInfo = "empty";
+            }
+
+            //extarct the service data
             var tmp_serviceName = $('#serviceName').val();
             var tmp_summary = $('#summary').val();
             var tmp_target = $('#target').val();
@@ -331,6 +380,7 @@
                 dateEnd: tmp_dateEnd,
                 money: tmp_money,
                 terms: tmp_terms,
+                autoFillOptions: basicInfo,
                 questionList: questionArray
             };
 
