@@ -55,17 +55,6 @@
     ";
 
 
-    echo"
-      <div class='top-sales box'>
-        <div class='title'>Unverify Users List</div>
-        <ul class='top-sales-details'>
-          <li>
-            <span class='product'><tr><td>IDK</td></span>
-            <span class='price'><td>$999</td><tr></span>
-          </li>
-        </ul>
-      </div>
-      <br/>
-    "
+
 
  ?>

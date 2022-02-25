@@ -3,6 +3,7 @@
 
 <head>
     <?php include 'format/HTMLheader.php'; ?>
+        <link rel="stylesheet" href="checkboxCss.css">
 </head>
 
 <body style="background-color: #eee8e5;">

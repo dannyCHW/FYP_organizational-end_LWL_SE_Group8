@@ -3,6 +3,7 @@
 
 <head>
     <?php include 'format/HTMLheader.php';?>
+    <title>Form ID-Smart Form</title>
     <style>
         /* Bordered form */
         .form2 {

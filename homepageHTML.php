@@ -155,13 +155,41 @@
                         <button class="button-smartform w3-right" id="btnJoinUs">&nbsp;Join Us!&nbsp;</button>
                     </p>
                     <br><br>
+                    <p style="color:#987468;"><b style="font-size:180%;">About Our Team</b><br>
+                  <div class="w3-quarter">
+                      <span><img src="img/Samantha.png" class="w3-circle sth-center" alt="Samantha"
+                              style="width:100%;max-width:150px;">
+                          <br><br>
+                          <h6 class="w3-center">LAU Wing Yin</h6>
+                      </span>
+                  </div>
 
-                    <br><br><br><br><br><br><br><br><br><br>
-                    <p class="w3-center" style="font-size:90%; color:#B58767;"> We are studying Higher Diploma
-                        in Creative Media (Web & App).
-                        <br>Our abilities include HTML5, JS, CSS3, jQuery, Python, PHP, SQL, NoSQL, and Adobe
-                        PR, AI, XD, ID...
-                    </p>
+                  <div class="w3-quarter">
+                      <span><img src="img/Cinna.png" class="w3-circle sth-center" alt="Cinna"
+                              style="width:100%;max-width:150px"></span>
+                      <br><br>
+                      <h6 class="w3-center">CHEUNG Tsz Yin</h6></span>
+                  </div>
+
+                  <div class="w3-quarter">
+                      <span><img src="img/Wenni.png" class="w3-circle sth-center" alt="Wenni"
+                              style="width:100%;max-width:150px"></span>
+                      <br><br>
+                      <h6 class="w3-center">YEUNG Wai Yin</h6></span>
+                  </div>
+
+                  <div class="w3-quarter">
+                      <span><img src="img/Cyrus.png" class="w3-circle sth-center" alt="Cyrus"
+                              style="width:100%;max-width:150px"></span>
+                      <br><br>
+                      <h6 class="w3-center">LAU Ka Pui</h6>
+                  </div>
+                  <br><br><br><br><br><br><br><br><br><br>
+                  <p class="w3-center" style="font-size:90%; color:#B58767;"> We are studying Higher Diploma
+                      in Creative Media (Web & App).
+                      <br>Our abilities include HTML5, JS, CSS3, jQuery, Python, PHP, SQL, NoSQL, and Adobe
+                      PR, AI, XD, ID...
+                  </p>
                 </div>
             </div>
         </div>

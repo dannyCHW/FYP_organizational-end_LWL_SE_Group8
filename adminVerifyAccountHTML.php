@@ -3,6 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <title>Admin Verify Account-Smart Form</title>
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="adminDashCss.css">
     <!-- Boxicons CDN Link -->

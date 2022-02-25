@@ -4,12 +4,14 @@
   <head>
     <meta charset="UTF-8">
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <title>Event Detail-Smart Form</title>
     <link rel="stylesheet" href="adminDashCss.css">
     <link rel="stylesheet" href="adminTableCss.css">
     <link rel="stylesheet" href="adminButtonCss.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="plugins/jquery-3.3.1-dist/jquery.min.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <style>
@@ -31,20 +33,22 @@
 
      <script>
        $( document ).ready(function() {
-         $("#acceptBtn").click(function(){
-           ////
-           $.ajax({
-             url:"adminAcceptEventAjax.php",
-             success:function(result){
-               window.location.href = "adminEventListHTML.php";
-           }});
-           ////
-         });
          $("#rejectBtn").click(function(){
            ////
            $.ajax({
              url:"adminRejectEventAjax.php",
              success:function(result){
+               alert("The event is reject, email has been send.");
+               window.location.href = "adminEventListHTML.php";
+           }});
+           ////
+         });
+         $("#acceptBtn").click(function(){
+           ////
+           $.ajax({
+             url:"adminAcceptEventAjax.php",
+             success:function(result){
+               alert("Accept the event, it will display on the android-end.");
                window.location.href = "adminEventListHTML.php";
            }});
            ////
@@ -81,7 +85,7 @@
       <?php include 'eventDetail.php';?>
 
     </table>
-    <h2 style="font-size:50px;">Event Information</h2>
+    <h2 style="font-size:50px;">Form Question</h2>
     <?php include 'questionDetail.php';?>
 
     <!-- main body end -->

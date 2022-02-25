@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <title>Admin Login-Smart Form</title>
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="adminLoginCss.css">
     <!-- Boxicons CDN Link -->
