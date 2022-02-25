@@ -2,7 +2,7 @@
 echo"
     <div class='sidebar'>
       <div class='logo-details'>
-        <i class='bx bxl-c-plus-plus'></i>
+        <i class='bx bxl-c-plus-plus' style='visibility: hidden;'></i>
         <span class='logo_name'>Smart Form</span>
       </div>
         <ul class='nav-links'>
@@ -43,7 +43,7 @@ echo"
             </a>
           </li>
           <li class='log_out'>
-            <a href='#'>
+            <a href='./checkSession/adminLogoutSession.php'>
               <i class='bx bx-log-out'></i>
               <span class='links_name'>Log out</span>
             </a>

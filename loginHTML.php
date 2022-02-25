@@ -47,11 +47,6 @@
         <div class="container w3-content">
             <h5 style="font-size:150%; color:#8A5122;" class="container w3-center"><b>Sign In</b></h5>
 
-              <label style="color:#B19F97;">Identity:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-              <input type="radio" id="identity" name="identity" class="radio_style" value="adminitor" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adminitor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="radio" id="identity" name="identity" class="radio_style" value="organization_user" checked>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Organzational user&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <br /><br />
-
             <p>
                 <label for="uid" style="color:#B19F97;">Email:</label>
                 <input type="text" name="email" class="form-control" required>

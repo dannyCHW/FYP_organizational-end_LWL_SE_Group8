@@ -1,6 +1,6 @@
-<<?php
+<?php
     session_start();
 
-    $_SESSION['$eventDetailID'] = $_POST['eventID'];
+      $_SESSION['$formID']=$_POST['eventID'];
 
  ?>

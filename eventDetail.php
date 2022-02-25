@@ -6,7 +6,7 @@
     use Google\Cloud\Storage\StorageClient;
 
 
-    $eventID;
+    $eventID='';
     $eventID = $_SESSION['$eventDetailID'];
     $eventName = "";
     $targetUser = "";

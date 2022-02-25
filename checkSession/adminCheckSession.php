@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if($_SESSION['identity'] == "adminitor"){
+    if(isset($_SESSION['identity'])){
 
     } else {
 
@@ -12,7 +12,7 @@
             sleep(1);
 
         echo "<script type='text/javascript'>
-            window.location.href = 'loginHTML.php';
+            window.location.href = 'adminLoginHTML.php';
             </script>";
 
     }

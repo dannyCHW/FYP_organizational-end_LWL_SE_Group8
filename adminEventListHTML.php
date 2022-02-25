@@ -22,6 +22,22 @@
         height: 35px;
        }
        </style>
+       <script>
+         $( document ).ready(function() {
+           $("#vtable #btnDetail").click(function(){
+             var eventID = $(this).parents('tr').find("td:eq(4)").text();
+             ////
+             $.ajax({
+               type: "POST",
+               url:"auditWelfareAjax.php",
+               data:{'eventID':eventID},
+               success:function(result){
+                 window.location.href = "adminEventDetailHTML.php";
+             }});
+             ////
+           });
+         });
+       </script>
    </head>
 <body>
 

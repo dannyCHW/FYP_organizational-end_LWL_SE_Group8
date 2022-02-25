@@ -4,7 +4,7 @@
 
   $input_email = $_POST['email'];
   $input_password = $_POST['pw'];
-  $identity = 'organization_user';
+  $identity = 'adminitor';
   $search = false;
   $pwd = "";
   $state="";
@@ -28,17 +28,17 @@
   if($pwd=="" ||$input_password != $pwd||$search == false){
     echo '<script>alert("Wrong email or password, please try again.")</script>';
     echo "<script type='text/javascript'>
-            window.location.href = 'loginHTML.php';
+            window.location.href = 'adminLoginHTML.php';
             </script>";
   }elseif($state == "disable"){
       echo '<script>alert("The account was disable.")</script>';
       echo "<script type='text/javascript'>
-              window.location.href = 'loginHTML.php';
+              window.location.href = 'adminLoginHTML.php';
               </script>";
   }elseif($state != "active"){
     echo '<script>alert("This account not verify yet.")</script>';
     echo "<script type='text/javascript'>
-            window.location.href = 'loginHTML.php';
+            window.location.href = 'adminLoginHTML.php';
             </script>";
   }    else if($input_password == $pwd){
       $_SESSION['$user_docId'] = $user_docId;
@@ -47,12 +47,10 @@
       $_SESSION['state'] = $state;
       $_SESSION['identity'] = $identity;
       echo '<script>alert("Login successful , welcome.")</script>';
-
-      //org lobby
+        //admin lobby
       echo "<script>
-      window.location.href='orgLobbyHTML.php';
+      window.location.href='adminDashHTML.php';
       </script>";
-
   }
 
  ?>

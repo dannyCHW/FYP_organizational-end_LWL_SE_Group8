@@ -30,7 +30,7 @@
      <script type='text/javascript'>
        google.charts.load('current', {'packages':['corechart']});
        google.charts.setOnLoadCallback(drawChart);
-google.charts.setOnLoadCallback(drawLineGraph);
+       google.charts.setOnLoadCallback(drawLineGraph);
        function drawChart() {
 
          var data = google.visualization.arrayToDataTable([
@@ -76,7 +76,7 @@ google.charts.setOnLoadCallback(drawLineGraph);
 
    </head>
 <body>
-
+  <?php include 'checkSession/adminCheckSession.php';?>
   <?php include 'bar/adminToolbar.php';?>
 
 
