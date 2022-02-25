@@ -8,7 +8,6 @@
    tr td{
      color:black;
      font-weight:bold;
-
    }
   </style>
   <script>

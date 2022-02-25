@@ -47,7 +47,7 @@
 
       <hr class="col-3 col-md-2 mb-5">
 
-  
+
         <div class="container">
 
                   <?php include 'loopActivity.php';?>
