@@ -21,6 +21,7 @@
     $collectionReference = $db->collection('service');
     $documentReference = $collectionReference->document($eventID);
     $snapshot = $documentReference->snapshot();
+    echo"<tbody>";
 
     if ($snapshot->exists()) {
         $eventName = $snapshot->data()['serviceName'];
@@ -55,5 +56,6 @@
     } else {
         printf('Document %s does not exist!' . PHP_EOL, $snapshot->id());
     }
+    echo"</tbody>";
 
  ?>

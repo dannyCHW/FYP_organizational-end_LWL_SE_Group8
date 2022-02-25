@@ -9,6 +9,13 @@
     $eventID = $_SESSION['$eventDetailID'];
     $index = "";
     $questiob = "";
+    echo"<table class='container' style='margin-top:40px;'>
+          	<thead>
+          		<tr>
+          			<th><h1>Index</h1></th>
+          			<th><h1>Question</h1></th>
+          		</tr>
+          	</thead><tbody>";
 
     $firstLayer = $db->collection('service')->document($eventID);
     $collections = $firstLayer->collection('questions');
@@ -20,5 +27,8 @@
       $question = $documents->data()['question'];
       echo"<tr><td>".$index."</td><td>".$question."</td></tr>";
     }
+
+    echo"</tbody></table>"
+
 
  ?>

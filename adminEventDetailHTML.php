@@ -5,46 +5,47 @@
     <meta charset="UTF-8">
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="adminDashCss.css">
+    <link rel="stylesheet" href="adminTableCss.css">
+    <link rel="stylesheet" href="adminButtonCss.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <style>
-     th, td {
-       padding: 15px;
-       text-align: left;
+     .inline {
+       display: inline-block;
      }
-     #btnViewAllEvent{
-       color: #fff;
-       background: #0A2558;
-       padding: 4px 12px;
-       font-size: 15px;
-       font-weight: 400;
-       border-radius: 4px;
-       text-decoration: none;
-       transition: all 0.3s ease;
+     #acceptBtn{
+       background-color: green;
+       font-weight: bold;
+       color:#ffffff;
+     }
+     #rejectBtn{
+       background-color: red;
+       font-weight: bold;
+       color:#ffffff;
      }
      </style>
 
 
      <script>
        $( document ).ready(function() {
-         $("#btnAccept").click(function(){
+         $("#acceptBtn").click(function(){
            ////
            $.ajax({
              url:"adminAcceptEventAjax.php",
              success:function(result){
-               window.location.href = "auditWelfareHTML.php";
+               window.location.href = "adminEventListHTML.php";
            }});
            ////
          });
-         $("#btnReject").click(function(){
+         $("#rejectBtn").click(function(){
            ////
            $.ajax({
              url:"adminRejectEventAjax.php",
              success:function(result){
-               window.location.href = "auditWelfareHTML.php";
+               window.location.href = "adminEventListHTML.php";
            }});
            ////
          });
@@ -56,6 +57,7 @@
 <body>
 
   <?php include 'bar/adminToolbar.php';?>
+  <?php include 'checkSession/adminCheckSession.php';?>
 
 
   <section class="home-section">
@@ -65,39 +67,29 @@
         <span class="dashboard">Dashboard</span>
       </div>
     </nav>
+</br></br></br></br>
 
-    <main>
-      <div class="center" >
-        <div class="form-header">
-            <h3>Verify Account:</h3>
-        </div>
-        <table style="width:100%;margin=0px;table-layout:fixed;font-size:25px;" id="vtable">
-          <thead>
-            <tr>
-              <th>Column</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <?php include 'eventDetail.php';?>
-        </table>
+    <h2 style="font-size:50px;">Event Information</h2>
+    <table class="container">
+    	<thead>
+    		<tr>
+    			<th><h1>Information Column</h1></th>
+    			<th><h1>Provide Answer</h1></th>
+    		</tr>
+    	</thead>
 
-        <table style="width:100%;margin=0px;margin-top:80px;margin-bottom: 100px;table-layout:fixed;font-size:25px;" id="qtable">
-          <thead>
-            <tr>
-              <th>Index</th>
-              <th>Question</th>
-            </tr>
-          </thead>
-          <?php include 'questionDetail.php';?>
-        </table>
-        <div class="inline">
-          <button id='btnAccept' class="container">Accept</button> <button id='btnReject' class="container">Reject</button>
-        </div>
+      <?php include 'eventDetail.php';?>
 
-      </div>
-    </main>
+    </table>
+    <h2 style="font-size:50px;">Event Information</h2>
+    <?php include 'questionDetail.php';?>
+
     <!-- main body end -->
 
+    <div class="inline" style="position: relative;width:100%;">
+          <button class="button-64" role="button"id="rejectBtn" style="justify-content: center;margin-left:19%;">Reject</button>
+          <button class="button-64" role="button"id="acceptBtn" style="justify-content: center;">Accept</button>
+    </div>
     </section>
   </body>
 
