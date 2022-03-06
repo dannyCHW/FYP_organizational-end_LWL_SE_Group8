@@ -23,7 +23,7 @@ $db = new FirestoreClient([
 //Do not uncomment the codes below!
 //Do not uncomment the codes below!
 //Do not uncomment the codes below!
-//The codes below is just for authors to reference
+//The codes below is just for reference
 
 
 /*

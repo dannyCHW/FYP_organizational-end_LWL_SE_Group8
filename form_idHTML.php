@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php include 'format/HTMLheader.php';?>
+    <?php include 'format/HTMLheader.php'; ?>
     <title>Form ID-Smart Form</title>
     <style>
         /* Bordered form */
@@ -32,7 +32,7 @@
     </style>
 
     <script>
-        $( document ).ready(function() {
+        $(document).ready(function() {
 
         });
     </script>
@@ -52,7 +52,8 @@
             </p>
 
             <p class="w3-center">
-                <button type="submit" id="btnConfrim"class="button-smartform2">&nbsp;Confirm&nbsp;</button>
+                <button type="submit" id="btnConfrim" class="button-smartform2">&nbsp;Confirm&nbsp;</button>
+                <button type="button" onclick="javascript: goToUploadPosterPage();" id="btnUpImg" class="button-smartform2">&nbsp;Upload Poster?&nbsp;</button>
                 <br>
                 <br>
             </p>
@@ -78,8 +79,7 @@
                     <div class="d-flex w-100 gap-2">
                         <label for="newsletter1" class="visually-hidden">Email address</label>
                         <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                        <button class="btn btn-primary" type="button"
-                            style="background-color: #987468;">Subscribe</button>
+                        <button class="btn btn-primary" type="button" style="background-color: #987468;">Subscribe</button>
                     </div>
                 </form>
             </div>
@@ -91,8 +91,13 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="js/main.js"></script>
 <script>
-    function out(){
+    function goToUploadPosterPage() {
+        
+    }
+
+    function out() {
         window.location.href = 'orgLobbyHTML.php';
     }
 </script>
+
 </html>
