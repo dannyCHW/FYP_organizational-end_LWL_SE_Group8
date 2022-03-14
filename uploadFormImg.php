@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require 'vendor/autoload.php';
 
@@ -15,56 +15,31 @@ $key = '{
     "token_uri": "https://oauth2.googleapis.com/token",
     "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/developer-sefyp%40lwl-se-fyp-2122-grp8.iam.gserviceaccount.com"
-  }';
+}';
+
+$storage = $storage = new StorageClient(['keyFile' => json_decode($key, true)]);
+
+$bucket = $storage->bucket('lwl-se-fyp-2122-grp8.appspot.com');
 
 if ($_FILES['file']['error'] != 4) {
-    //set which bucket to work in
-    $bucketName = "gs://lwl-se-fyp-2122-grp8.appspot.com/";
-    // get local file for upload testing
-    $fileContent = file_get_contents($_FILES["file"]["tmp_name"]);
-    // NOTE: if 'folder' or 'tree' is not exist then it will be automatically created !
-    $cloudPath = 'uploads/' . $_FILES["file"]["name"];
 
-    $isSucceed = uploadFile($bucketName, $fileContent, $cloudPath);
+    $file_tmp = $_FILES['file']['tmp_name'];
+    $file_name = $_FILES['file']['name'];
 
-    if ($isSucceed == true) {
-        $response['msg'] = 'SUCCESS: to upload ' . $cloudPath . PHP_EOL;
-        // TEST: get object detail (filesize, contentType, updated [date], etc.)
-        //$response['data'] = getFileInfo($bucketName, $cloudPath);
-    } else {
-        $response['code'] = "201";
-        $response['msg'] = 'FAILED: to upload ' . $cloudPath . PHP_EOL;
-    }
-}
+    move_uploaded_file($file_tmp, "C:/xampp/htdocs/upload/" . $file_name);
 
-function uploadFile($bucketName, $fileContent, $cloudPath) {
-    $privateKeyFileContent = $GLOBALS['key'];
-    // connect to Google Cloud Storage using private key as authentication
-    try {
-        $storage = new StorageClient([
-            'keyFile' => json_decode($privateKeyFileContent, true)
-        ]);
-    } catch (Exception $e) {
-        // maybe invalid private key ?
-        print $e;
-        return false;
-    }
- 
-    // set which bucket to work in
-    $bucket = $storage->bucket($bucketName);
- 
-    // upload/replace file 
-    $storageObject = $bucket->upload(
-            $fileContent,
-            ['name' => $cloudPath]
-            // if $cloudPath is existed then will be overwrite without confirmation
-            // NOTE: 
-            // a. do not put prefix '/', '/' is a separate folder name  !!
-            // b. private key MUST have 'storage.objects.delete' permission if want to replace file !
+    $file = fopen("C:/xampp/htdocs/upload/" . $file_name, "r");
+
+    $bucket->upload(
+        fopen("C:/xampp/htdocs/upload/" . $file_name, "r"),
+        ['name' => 'posters/' . $_FILES["file"]["name"]]
     );
- 
-    // is it succeed ?
-    return $storageObject != null;
+
+    fclose($file);
+    unlink("C:/xampp/htdocs/upload/" . $file_name);
+
+    
 }
+
 
 ?>
