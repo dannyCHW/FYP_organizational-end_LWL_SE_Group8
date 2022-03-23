@@ -38,7 +38,8 @@ $service_Doc_data = [
     'money' => $money,
     'terms' => $terms,
     'autoFillOptions' => $autoFillOptions,
-    'status' => 'unVerify'
+    'status' => 'unVerify',
+    'posterImg' => 'none'
 ];
 
 $addedDocRef_service = $db->collection('service')->add($service_Doc_data);

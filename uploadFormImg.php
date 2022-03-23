@@ -26,19 +26,25 @@ if ($_FILES['file']['error'] != 4) {
     $file_tmp = $_FILES['file']['tmp_name'];
     $file_name = $_FILES['file']['name'];
 
-    move_uploaded_file($file_tmp, "C:/xampp/htdocs/upload/" . $file_name);
+    //open your own upload dir in your XAMPP '~/xampp/htdocs/upload/'
+    $localDir = 'C:/xampp/htdocs/upload/';
 
-    $file = fopen("C:/xampp/htdocs/upload/" . $file_name, "r");
+    move_uploaded_file($file_tmp, $localDir . $file_name);
 
+    $file = fopen($localDir . $file_name, "r");
+
+    //upload to firebase storage
     $bucket->upload(
-        fopen("C:/xampp/htdocs/upload/" . $file_name, "r"),
+        fopen($localDir . $file_name, "r"),
         ['name' => 'posters/' . $_FILES["file"]["name"]]
     );
 
     fclose($file);
-    unlink("C:/xampp/htdocs/upload/" . $file_name);
 
-    
+    //delete the local file that tmp store in upload dir
+    unlink($localDir . $file_name);
+
+    echo "<script type='text/javascript'>alert('uploaded.');window.location.href = 'orgLobbyHtml.php';</script>";
 }
 
 
