@@ -1,6 +1,6 @@
 <?php
 
-require 'vendor/autoload.php';
+require_once 'firebaseConfig.php';
 
 use Google\Cloud\Storage\StorageClient;
 
@@ -17,32 +17,53 @@ $key = '{
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/developer-sefyp%40lwl-se-fyp-2122-grp8.iam.gserviceaccount.com"
 }';
 
+date_default_timezone_set("Asia/Hong_Kong");
+
 $storage = $storage = new StorageClient(['keyFile' => json_decode($key, true)]);
 
 $bucket = $storage->bucket('lwl-se-fyp-2122-grp8.appspot.com');
 
 if ($_FILES['file']['error'] != 4) {
 
+    $oldImgName = $_POST['currentImgName'];
+    $serviceID = $_POST['serviceID'];
+    $newfilename = $serviceID . '_' . date('Ymd') . '_' . date("H.i.s");
+
     $file_tmp = $_FILES['file']['tmp_name'];
-    $file_name = $_FILES['file']['name'];
+
+    $path = $_FILES['file']['name'];
+    $ext = pathinfo($path, PATHINFO_EXTENSION);
+
+    $newNameWithType = $newfilename . '.' . $ext;
 
     //open your own upload dir in your XAMPP '~/xampp/htdocs/upload/'
     $localDir = 'C:/xampp/htdocs/upload/';
 
-    move_uploaded_file($file_tmp, $localDir . $file_name);
+    move_uploaded_file($file_tmp, $localDir . $newNameWithType);
+    
 
-    $file = fopen($localDir . $file_name, "r");
+    $file = fopen($localDir . $newNameWithType, "r");
 
     //upload to firebase storage
     $bucket->upload(
-        fopen($localDir . $file_name, "r"),
-        ['name' => 'posters/' . $_FILES["file"]["name"]]
+        fopen($localDir . $newNameWithType, "r"),
+        ['name' => 'posters/' . $newNameWithType]
     );
 
     fclose($file);
 
     //delete the local file that tmp store in upload dir
-    unlink($localDir . $file_name);
+    unlink($localDir . $newNameWithType);
+
+    //delete the old img 
+    $object = $bucket->object('posters/'.$oldImgName);
+    $object->delete();
+
+    //Update the posterImg data of the service document in firestore
+    $serviceRef = $db->collection('service')->document($serviceID);
+    $serviceRef ->update([
+        ['path' => 'posterImg', 'value' => $newNameWithType]
+    ]);
 
     echo "<script type='text/javascript'>alert('uploaded.');window.location.href = 'orgLobbyHtml.php';</script>";
 }

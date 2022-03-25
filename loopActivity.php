@@ -17,6 +17,7 @@ foreach ($documents as $documents) {
       $eventName = $documents ->data()['serviceName'];
       $startDate = $documents ->data()['dateStart'];
       $imgName = $documents ->data()['posterImg'];
+      $serviceID = $documents ->id();
 
       $img_url = '';
 
@@ -59,7 +60,10 @@ foreach ($documents as $documents) {
               <div class='btn-group'>
                 <button type='button' class='btn btn-sm btn-outline-secondary'>View</button>
                 <button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>
-              </div>
+                <button id='uploadImg' type='button' class='btn btn-sm btn-outline-secondary'>Upload Poster</button>
+                <p hidden id='serviceID'>".$serviceID."</p>
+                <p hidden id='imgName'>".$imgName."</p>
+                </div>
               <small class='text-muted'>Started Date: ".$startDate."</small>
             </div>
           </div>

@@ -2,27 +2,27 @@
 <html lang="en">
 
 <head>
-  <?php include 'format/HTMLheader.php';?>
+  <?php include 'format/HTMLheader.php'; ?>
 
   <script>
-      $( document ).ready(function() {
-        $("#btnCreateForm").click(function(){
-            window.location.href = "org_createformHTML.php";
-        });
+    $(document).ready(function() {
+      $("#btnCreateForm").click(function() {
+        window.location.href = "org_createformHTML.php";
       });
+    });
   </script>
 
 </head>
 <style>
-.column {
-  float: left;
-  width: 50%;
-}
+  .column {
+    float: left;
+    width: 50%;
+  }
 </style>
 
 <body style="background-color: #eee8e5;">
-    <?php include 'checkSession/orgUserCheckSession.php';?>
-    <?php include 'format/orgTopBar.php';?>
+  <?php include 'checkSession/orgUserCheckSession.php'; ?>
+  <?php include 'format/orgTopBar.php'; ?>
   <!-- nav end -->
 
   <!-- main body -->
@@ -48,12 +48,12 @@
       <hr class="col-3 col-md-2 mb-5">
 
 
-        <div class="container">
+      <div class="container">
 
-                  <?php include 'loopActivity.php';?>
+        <?php include 'loopActivity.php'; ?>
 
-          </div>
-        </div>
+      </div>
+    </div>
 
 
     </div>
@@ -69,3 +69,11 @@
 <script src="js/main.js"></script>
 
 </html>
+<script>
+  $(document).ready(function() {
+    $("#uploadImg").click(function() {
+      window.location.href = "uploadFormImgHTML.php?serviceID=" + $(this).siblings("#serviceID").html() 
+                                                   + "&oldImg=" + $(this).siblings("#imgName").html();
+    });
+  });
+</script>

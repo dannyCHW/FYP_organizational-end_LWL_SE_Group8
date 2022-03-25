@@ -70,6 +70,8 @@
                 <span style="font-size:90%; color:#B19F97;">Poster of the event</span><br>
                 <span style="font-size:200%; color:#B19F97;">
                     <input type="file" name="file" class="form-control form-color2" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept=".jpg, .jpeg, .png, .tiff, .svg" required>
+                    <input type="hidden" name="serviceID" value="<?php echo $_GET['serviceID']; ?>" />
+                    <input type="hidden" name="currentImgName" value="<?php echo $_GET['oldImg']; ?>" />
                 </span>
             </p>
 
