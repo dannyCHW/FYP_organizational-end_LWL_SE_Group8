@@ -55,9 +55,11 @@ if ($_FILES['file']['error'] != 4) {
     //delete the local file that tmp store in upload dir
     unlink($localDir . $newNameWithType);
 
-    //delete the old img 
-    $object = $bucket->object('posters/'.$oldImgName);
-    $object->delete();
+    if($oldImgName != 'none'){
+        //delete the old img 
+        $object = $bucket->object('posters/'.$oldImgName);
+        $object->delete();
+    }
 
     //Update the posterImg data of the service document in firestore
     $serviceRef = $db->collection('service')->document($serviceID);
@@ -65,7 +67,10 @@ if ($_FILES['file']['error'] != 4) {
         ['path' => 'posterImg', 'value' => $newNameWithType]
     ]);
 
-    echo "<script type='text/javascript'>alert('uploaded.');window.location.href = 'orgLobbyHtml.php';</script>";
+    echo "<script type='text/javascript'>alert('uploaded.');
+          window.location.href = 'orgLobbyHtml.php';</script>";
+
+          
 }
 
 

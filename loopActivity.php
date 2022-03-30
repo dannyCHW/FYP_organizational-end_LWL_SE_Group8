@@ -60,9 +60,10 @@ foreach ($documents as $documents) {
               <div class='btn-group'>
                 <button type='button' class='btn btn-sm btn-outline-secondary'>View</button>
                 <button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>
-                <button id='uploadImg' type='button' class='btn btn-sm btn-outline-secondary'>Upload Poster</button>
+                <button id='uploadImg' type='button' class='uploadImg'>Upload Poster</button>
                 <p hidden id='serviceID'>".$serviceID."</p>
                 <p hidden id='imgName'>".$imgName."</p>
+                <p>$serviceID</p>
                 </div>
               <small class='text-muted'>Started Date: ".$startDate."</small>
             </div>

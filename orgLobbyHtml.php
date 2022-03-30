@@ -70,10 +70,16 @@
 
 </html>
 <script>
-  $(document).ready(function() {
-    $("#uploadImg").click(function() {
-      window.location.href = "uploadFormImgHTML.php?serviceID=" + $(this).siblings("#serviceID").html() 
-                                                   + "&oldImg=" + $(this).siblings("#imgName").html();
-    });
+  $('.uploadImg').on('click', function(e){
+    //alert($(this).siblings("#serviceID").html());
+        window.location.href = "uploadFormImgHTML.php?serviceID=" + $(this).siblings("#serviceID").html() 
+                                                     + "&oldImg=" + $(this).siblings("#imgName").html();
   });
+  // $(document).ready(function() {
+  //   $("#uploadImg").click(function() {
+  //     alert($(this).siblings("#serviceID").html());
+  //     // window.location.href = "uploadFormImgHTML.php?serviceID=" + $(this).siblings("#serviceID").html() 
+  //     //                                              + "&oldImg=" + $(this).siblings("#imgName").html();
+  //   });
+  // });
 </script>
