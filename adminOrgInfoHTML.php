@@ -33,26 +33,46 @@
 
      <script>
        $( document ).ready(function() {
-         $("#rejectBtn").click(function(){
+
+         var checkState = $("#lbState").text();
+
+         if(checkState == "active"){
+           $("#disableBtn").show();
+         }else{
+           $("#activeBtn").show();
+         }
+
+         $("#disableBtn").click(function(){
            ////
-           $.ajax({
-             url:"adminRejectEventAjax.php",
-             success:function(result){
-               alert("The event is reject, email has been send.");
-               window.location.href = "adminEventListHTML.php";
-           }});
+          if(confirm("Are you sure you want to disable this account?")){
+             $.ajax({
+               type: "POST",
+               url:"adminDisableAccount.php",
+               success:function(result){
+                 alert("Disable success.");
+                 location.reload();
+             }});
+           }else{
+
+          }
            ////
          });
-         $("#acceptBtn").click(function(){
+         $("#activeBtn").click(function(){
            ////
+           if(confirm("Are you sure you want to active this account?")){
            $.ajax({
-             url:"adminAcceptEventAjax.php",
+             type: "POST",
+             url:"adminActiveAccount.php",
              success:function(result){
-               alert("Accept the event, it will display on the android-end.");
-               window.location.href = "adminEventListHTML.php";
+               alert("Active success.");
+               location.reload();
            }});
+         }else{
+           
+         }
            ////
          });
+
        });
      </script>
    </head>
@@ -73,26 +93,25 @@
     </nav>
 </br></br></br></br>
 
-    <h2 style="font-size:50px;margin-bottom:50px;margin-top:40px;">Event Information</h2>
+    <h2 style="font-size:50px;margin-bottom:50px;margin-top:40px;">Account Information</h2>
     <table class="container">
     	<thead>
     		<tr>
-    			<th><h1>Information Column</h1></th>
-    			<th><h1>Provide Answer</h1></th>
+    			<th><h1>Column</h1></th>
+    			<th><h1>Information</h1></th>
     		</tr>
     	</thead>
 
-      <?php include 'eventDetail.php';?>
+      <?php include 'checkOrgDetail.php';?>
+
 
     </table>
-    <h2 style="font-size:50px;">Form Question</h2>
-    <?php include 'questionDetail.php';?>
 
     <!-- main body end -->
 
     <div class="inline" style="position: relative;width:100%;">
-          <button class="button-64" role="button"id="rejectBtn" style="justify-content: center;margin-left:19%;">Reject</button>
-          <button class="button-64" role="button"id="acceptBtn" style="justify-content: center;">Accept</button>
+          <button class="button-64" role="button"id="disableBtn" style="justify-content: center;margin-left:30%;" hidden>Disable This Account</button>
+          <button class="button-64" role="button"id="activeBtn" style="justify-content: center;margin-left:30%;" hidden>Active This Account</button>
     </div>
     </section>
   </body>

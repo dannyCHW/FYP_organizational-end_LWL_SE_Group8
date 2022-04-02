@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Admin Login-Smart Form</title>
-    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="adminLoginCss.css">
-    <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="plugins/jquery-3.3.1-dist/jquery.min.js"></script>

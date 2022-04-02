@@ -19,7 +19,7 @@ echo"
             </a>
           </li>
           <li>
-            <a href='#'>
+            <a href='adminUserManagementHTML.php'>
               <i class='bx bx-pie-chart-alt-2' ></i>
               <span class='links_name'>User Management</span>
             </a>
@@ -37,7 +37,7 @@ echo"
             </a>
           </li>
           <li>
-            <a href='#'>
+            <a href='adminProfileHTML.php'>
               <i class='bx bx-user' ></i>
               <span class='links_name'>Profile</span>
             </a>

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="adminDashCss.css">
     <title>Admin Lobby-Smart Form</title>
-    <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

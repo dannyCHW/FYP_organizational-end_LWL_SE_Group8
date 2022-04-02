@@ -22,15 +22,15 @@
        </style>
        <script>
          $( document ).ready(function() {
-           $("#vtable #btnDetail").click(function(){
-             var eventID = $(this).parents('tr').find("td:eq(4)").text();
+           $("#vtable #managementBtn").click(function(){
+             var orgID = $(this).parents('tr').find("td:eq(5)").text();
              ////
              $.ajax({
                type: "POST",
-               url:"auditWelfareAjax.php",
-               data:{'eventID':eventID},
+               url:"adminViewOrgAccount.php",
+               data:{'orgID':orgID},
                success:function(result){
-                 window.location.href = "adminEventDetailHTML.php";
+                 window.location.href = "adminOrgInfoHTML.php";
              }});
              ////
            });
@@ -40,13 +40,14 @@
 <body>
 
   <?php include 'bar/adminToolbar.php';?>
+  <?php include 'checkSession/adminCheckSession.php';?>
 
 
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Event List</span>
+        <span class="dashboard">User Management</span>
       </div>
     </nav>
 
@@ -58,14 +59,16 @@
         <table style="width:100%;margin-top:5%;margin-bottom:300px;" id="vtable">
           <thead style="font-size:20px;font-weight:bold;color:black;height:100px;">
             <tr>
-              <th>Event Name</th>
               <th>Org Name</th>
-              <th>Start Date</th>
-              <th>More Detail</th>
+              <th>Email</th>
+              <th>Number</th>
+              <th>State</th>
+              <th>View More</th>
               <th hidden>Event ID</th>
+
             </tr>
           </thead>
-          <?php include 'eventList.php';?>
+          <?php include 'orgAccountList.php';?>
         </table>
 
       </div>

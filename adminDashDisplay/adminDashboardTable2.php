@@ -2,6 +2,8 @@
 
   include('./firebaseConfig.php');
 
+  $result = array();
+
   $eventName= "";
   $startDate = "";
   $serviceID = "";
@@ -27,6 +29,7 @@
         $serviceName = $list->data()['serviceName'];
         $createrID =  $list->data()['creatorID'];
         $startDate =  $list->data()['dateStart'];
+
         //
 
         $collectionReference = $db->collection('organization_user');
@@ -35,13 +38,28 @@
 
         if ($snapshot->exists()) {
             $orgName = $snapshot->data()['orgName'];
+
+
+            $result[] = array(
+              'serviceID' =>  $serviceID,
+              'serviceName' => $serviceName,
+              'startDate' => $startDate,
+              'orgName' => $orgName
+            );
+
         } else {
             printf('Document %s does not exist!' . PHP_EOL, $snapshot->id());
         }
         //
-        echo"<tr><td>".$startDate."</td><td>".$serviceName."</td><td>".$orgName."</td><td>"."<td id='eventID' hidden>".$serviceID."</td></tr>";
-      }else{
+        }else{
       }
+    }
+
+    $columns = array_column($result, 'startDate');
+    array_multisort($columns, SORT_ASC,$result);
+
+    foreach ($result as $count) {
+        echo"<tr><td>".$count['startDate']."</td><td>".$count['serviceName']."</td><td>".$count['orgName']."</td><td>"."<td id='eventID' hidden>".$count['serviceID']."</td></tr>";
     }
 
   echo"

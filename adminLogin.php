@@ -9,6 +9,8 @@
   $pwd = "";
   $state="";
   $user_docId='';
+  $stfID='';
+  $name='';
 
   $userRef = $db->collection($identity);
   $query = $userRef->where('email', '=', $_POST['email']);
@@ -19,6 +21,8 @@
         $user_docId = $documents->id();
         $pwd = $documents->data()['password'];
         $state = $documents->data()['state'];
+        $stfID = $documents->data()['id'];
+        $name = $documents->data()['name'];
         $search = true;
         break;
       }else{
@@ -46,6 +50,9 @@
       $_SESSION['type'] = $identity;
       $_SESSION['state'] = $state;
       $_SESSION['identity'] = $identity;
+      $_SESSION['stfID'] = $stfID;
+      $_SESSION['name'] = $name;
+      $_SESSION['pwd'] = $pwd;
       echo '<script>alert("Login successful , welcome.")</script>';
         //admin lobby
       echo "<script>

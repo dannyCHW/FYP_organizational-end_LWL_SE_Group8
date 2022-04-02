@@ -1,0 +1,195 @@
+#btnEdit {
+  text-decoration: none;
+  border: 3px solid yellow;
+  color: transparent;
+  padding: 15px 40px;
+  margin-top: 60px;
+  font-size: 10px;
+  font-family: sans-serif;
+  transition: all 0.5s;
+  position: relative;
+  left:50%;
+
+}
+#btnEdit:before {
+  content: "Press Me To Edit";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(34, 34, 34);
+  font-size: 10px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+           font-weight: bold;
+}
+#btnEdit:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+#btnEdit:after {
+  content: "Edit";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(34, 34, 34);
+  font-size: 10px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+ font-weight: bold;
+}
+#btnEdit:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+
+
+
+
+#btnCancel{
+  text-decoration: none;
+  border: 3px solid black;
+  color: transparent;
+  padding: 15px 40px;
+  margin-top: 60px;
+  font-size: 10px;
+  font-family: sans-serif;
+  transition: all 0.5s;
+  position: relative;
+  left:30%;
+}
+#btnCancel:before {
+  content: "Press Me To Cancel";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background:rgb(220,20,60);
+  font-size: 10px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+  font-weight: bold;
+}
+#btnCancel:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+#btnCancel:after {
+  content: "Cancel Editing";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: rgb(220,20,60);
+  font-size: 10px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+  font-weight: bold;
+}
+#btnCancel:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+
+
+
+
+#btnSubmit{
+  text-decoration: none;
+  border: 3px solid black;
+  color: transparent;
+  padding: 15px 40px;
+  margin-top: 60px;
+  font-size: 10px;
+  font-family: sans-serif;
+  transition: all 0.5s;
+  position: relative;
+  left:40%;
+}
+#btnSubmit:before {
+  content: "Press Me To Change";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background:	rgb(50,205,50);
+  font-size: 10px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+  font-weight: bold;
+}
+#btnSubmit:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+#btnSubmit:after {
+  content: "Change";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background:	rgb(50,205,50);
+  font-size: 10px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+  font-weight: bold;
+}
+#btnSubmit:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
