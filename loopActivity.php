@@ -17,12 +17,13 @@ foreach ($documents as $documents) {
       $eventName = $documents ->data()['serviceName'];
       $startDate = $documents ->data()['dateStart'];
       $imgName = $documents ->data()['posterImg'];
+      $endDate = $documents ->data()['dateEnd'];
       $serviceID = $documents ->id();
 
       $img_url = '';
 
       if($imgName != 'none'){
-        $img_url = "<img src='https://firebasestorage.googleapis.com/v0/b/lwl-se-fyp-2122-grp8.appspot.com/o/posters%2F".$imgName."?alt=media'>";
+        $img_url = "<img  name='imgPoster'src='https://firebasestorage.googleapis.com/v0/b/lwl-se-fyp-2122-grp8.appspot.com/o/posters%2F".$imgName."?alt=media'height='645px'width='645px'>";
 
       }
 
@@ -58,14 +59,19 @@ foreach ($documents as $documents) {
             <p class='card-text'>".$eventName."</p>
             <div class='d-flex justify-content-between align-items-center'>
               <div class='btn-group'>
-                <button type='button' class='btn btn-sm btn-outline-secondary'>View</button>
+
+                <form method='POST' action='orgEventDashHTML.php'>
+                  <button type='submit' id='btnSub'class='btn btn-sm btn-outline-secondary' value=".$serviceID.">View</button>
+                </form>
+
                 <button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>
                 <button id='uploadImg' type='button' class='uploadImg'>Upload Poster</button>
                 <p hidden id='serviceID'>".$serviceID."</p>
                 <p hidden id='imgName'>".$imgName."</p>
-                <p>$serviceID</p>
+                <p hidden>$serviceID</p>
                 </div>
               <small class='text-muted'>Started Date: ".$startDate."</small>
+              <small class='text-muted'>Ended Date: ".$endDate."</small>
             </div>
           </div>
         </div>

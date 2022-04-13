@@ -7,9 +7,27 @@
   <script>
     $(document).ready(function() {
       $("#btnCreateForm").click(function() {
+
         window.location.href = "org_createformHTML.php";
+
       });
+
+      $("form").submit(function(e){
+
+          var eventId = $(this).find("[id='btnSub']").val();
+
+          $.ajax({
+            type: "POST",
+            url:"orgSelectEvent.php",
+            data:{'eventId':eventId},
+            success:function(result){
+              window.location.href = "orgEventDashHTML.php";
+          }});
+
+      });
+
     });
+
   </script>
 
 </head>
@@ -72,13 +90,13 @@
 <script>
   $('.uploadImg').on('click', function(e){
     //alert($(this).siblings("#serviceID").html());
-        window.location.href = "uploadFormImgHTML.php?serviceID=" + $(this).siblings("#serviceID").html() 
+        window.location.href = "uploadFormImgHTML.php?serviceID=" + $(this).siblings("#serviceID").html()
                                                      + "&oldImg=" + $(this).siblings("#imgName").html();
   });
   // $(document).ready(function() {
   //   $("#uploadImg").click(function() {
   //     alert($(this).siblings("#serviceID").html());
-  //     // window.location.href = "uploadFormImgHTML.php?serviceID=" + $(this).siblings("#serviceID").html() 
+  //     // window.location.href = "uploadFormImgHTML.php?serviceID=" + $(this).siblings("#serviceID").html()
   //     //                                              + "&oldImg=" + $(this).siblings("#imgName").html();
   //   });
   // });

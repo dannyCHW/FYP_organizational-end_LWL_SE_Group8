@@ -35,7 +35,7 @@
                data:{'id':orgID},
                success:function(result){
                  location.reload();
-                 alert("Accept");
+                 alert("Accept this account success.");
              }});
              ////
            });
@@ -49,7 +49,7 @@
                data:{'id':orgID},
                success:function(result){
                  location.reload();
-                 alert("Reject");
+                 alert("Reject this account success.");
              }});
              ////
            });

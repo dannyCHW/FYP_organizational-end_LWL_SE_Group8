@@ -93,40 +93,7 @@
     <a id="scroll" style="display: none;"><span></span></a>
 
     <!-- nav -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #EEE8E5;">
-        <div class="container-fluid">
-
-            <div class="row" id="logo">
-                <div class="col col-lg-2"></div>
-                <div class="col-md-auto"><img src="img/IconsPSD.png" alt="" width="50" height="50" class=""></div>
-            </div>
-
-            <div class="row">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><small>Eng</small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><small>繁</small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signin.html"><small>Profile</small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><small>Setting</small></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </nav>
+  <?php include 'format/HTMLbar.php';?>
     <!-- nav end -->
 
     <div class="container">
@@ -155,35 +122,7 @@
                         <button class="button-smartform w3-right" id="btnJoinUs">&nbsp;Join Us!&nbsp;</button>
                     </p>
                     <br><br>
-                    <p style="color:#987468;"><b style="font-size:180%;">About Our Team</b><br>
-                  <div class="w3-quarter">
-                      <span><img src="img/Samantha.png" class="w3-circle sth-center" alt="Samantha"
-                              style="width:100%;max-width:150px;">
-                          <br><br>
-                          <h6 class="w3-center">LAU Wing Yin</h6>
-                      </span>
-                  </div>
 
-                  <div class="w3-quarter">
-                      <span><img src="img/Cinna.png" class="w3-circle sth-center" alt="Cinna"
-                              style="width:100%;max-width:150px"></span>
-                      <br><br>
-                      <h6 class="w3-center">CHEUNG Tsz Yin</h6></span>
-                  </div>
-
-                  <div class="w3-quarter">
-                      <span><img src="img/Wenni.png" class="w3-circle sth-center" alt="Wenni"
-                              style="width:100%;max-width:150px"></span>
-                      <br><br>
-                      <h6 class="w3-center">YEUNG Wai Yin</h6></span>
-                  </div>
-
-                  <div class="w3-quarter">
-                      <span><img src="img/Cyrus.png" class="w3-circle sth-center" alt="Cyrus"
-                              style="width:100%;max-width:150px"></span>
-                      <br><br>
-                      <h6 class="w3-center">LAU Ka Pui</h6>
-                  </div>
                   <br><br><br><br><br><br><br><br><br><br>
                   <p class="w3-center" style="font-size:90%; color:#B58767;"> We are studying Higher Diploma
                       in Creative Media (Web & App).
@@ -203,8 +142,7 @@
 
             <div class="col-5">
                 <p><b>Contact Us</b></p>
-                <p>Phone 852 0000 0000 | Email cs@xxxxxxxxx.com</p>
-                <small>Copyright &copy; 2022 XXXXX XXXX Limited. All rights reserved.</small>
+                <p>Phone 852 9542 2311 | Email 200244255@stu.vtc.edu.com</p>
             </div>
 
             <div class="col-4 offset-1">

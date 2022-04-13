@@ -5,8 +5,7 @@
 
         <div class="col-5">
             <p><b>Contact Us</b></p>
-            <p>Phone 852 0000 0000 | Email cs@xxxxxxxxx.com</p>
-            <small>Copyright &copy; 2022 XXXXX XXXX Limited. All rights reserved.</small>
+            <p>Phone 852 9542 2133 | Email 200244255@stu.vtc.edu.hk</p>
         </div>
 
         <div class="col-4 offset-1">

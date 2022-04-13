@@ -23,4 +23,13 @@ if($new_password != ""){
   ]);
 }
 
+ $_SESSION['name'] = $new_name;
+ $_SESSION['email'] = $new_email;
+
+echo '<script>alert("Edit profile successful .")</script>';
+
+//org lobby
+echo "<script>
+window.location.href='adminProfileHTML.php';
+</script>";
 ?>

@@ -1,0 +1,82 @@
+<?php
+echo"
+<table class='table table-striped table-sm'>
+  <thead>
+    <tr>
+      <th scope='col'>#</th>
+      <th scope='col'>Applicant Name</th>
+      <th scope='col'>Application Name</th>
+      <th scope='col'>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Number</td>
+      <td>Name</td>
+      <td>Form</td>
+      <td>Date</td>
+    </tr>
+    <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Form</td>
+        <td>Date</td>
+      </tr>
+  </tbody>
+</table>
+";
+ ?>

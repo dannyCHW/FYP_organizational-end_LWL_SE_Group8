@@ -29,9 +29,6 @@
                         <a class="nav-link" href="#"><small>簡</small></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="signin.html"><small>Profile</small></a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#"><small>Setting</small></a>
                     </li>
                 </ul>

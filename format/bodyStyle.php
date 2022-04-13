@@ -3,5 +3,5 @@
 <script src="plugins/jquery-3.3.1-dist/jquery.steps.js"></script>
 <!-- <script src="js/createform_form.js"></script> -->
 <script src="js/Sortable.js"></script>
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
 <script src="js/main.js"></script>
