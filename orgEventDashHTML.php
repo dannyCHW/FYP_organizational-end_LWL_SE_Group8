@@ -56,6 +56,19 @@
 
         });
 
+        $("#singleReportBtn").click(function(){
+
+          $.ajax({
+            type: "POST",
+            url:"generateSingleReport.php",
+            success:function(result){
+              window.location.href = "orgEventDashHTML.php";
+              alert("Report has been generate, lease check your folder.");
+          }});
+
+
+        });
+
 
       });
     </script>
@@ -76,12 +89,12 @@
             <h1 class="h2 theme-color9 theme-bg-color8 addRadiusBorder2 addSurroundedPadding3" ><?php include 'orgDashBoxHTML/heading.php'; ?></h1>
             <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group me-2">
-                    <button type="button" class="btn btn-sm noBorder theme-color8 btn-smartform3" id="exportBtn">
-                        <span style="padding:10px;"class="material-icons inline_icon" id="kpiBtn"></span>
+                    <button id="singleReportBtn"type="button" class="btn btn-sm noBorder theme-color8 btn-smartform3">
+                        <span style="padding:10px;"class="material-icons inline_icon"></span>
                         Export Event Report
                     </button>
 
-                    <button style="padding:10px;" type="button" class="btn btn-sm noBorder theme-color8 btn-smartform3" id="dropdownMenuButton2">
+                    <button id="monthReportBtn" style="padding:10px;" type="button" class="btn btn-sm noBorder theme-color8 btn-smartform3">
                         Export KPI Month Report
                     </button>
                 </div>
@@ -130,25 +143,7 @@
                         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                             <div class="card">
                                 <div class="card-body p-3">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <div class="numbers">
-                                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Applicants</p>
-                                                <h5 class="font-weight-bolder">
-                                                    4000
-                                                </h5>
-                                                <p class="mb-0">
-                                                    <span class="text-success text-sm font-weight-bolder">+40%</span>
-                                                    since last quarter
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <div>
-                                                <span class="material-icons">people</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  <?php  include 'orgDashBoxHTML/dashtop3.php'; ?>
                                 </div>
                             </div>
 

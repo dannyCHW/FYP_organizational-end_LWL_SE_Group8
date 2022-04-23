@@ -17,6 +17,7 @@
     $orgName = "" ;
     $intro ="";
     $applicant = 0;
+    $questionNum = 0 ;
 
     $collectionReference = $db->collection('service');
     $documentReference = $collectionReference->document($eventID);
@@ -55,6 +56,20 @@
           }
 
         $_SESSION['applicant'] = $applicant;
+
+
+        $firstLayer = $db->collection('service')->document($_SESSION['orgSelectEventID']);
+        $collections = $firstLayer->collection('questions');
+        $ready_documents = $collections->orderBy('index', 'ASC');
+        $documents = $ready_documents->documents();
+
+        foreach ($documents as $documents) {
+            $questionNum += 1;
+        }
+
+        $_SESSION['questionNum'] = $questionNum;
+
+
     } else {
         printf('Document %s does not exist!' . PHP_EOL, $snapshot->id());
     }

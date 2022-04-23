@@ -19,6 +19,7 @@
         $user_docId = $documents->id();
         $pwd = $documents->data()['password'];
         $state = $documents->data()['state'];
+        $name = $documents->data()['orgName'];
         $search = true;
         break;
       }else{
@@ -51,6 +52,7 @@
       $_SESSION['type'] = $identity;
       $_SESSION['state'] = $state;
       $_SESSION['identity'] = $identity;
+      $_SESSION['orgName'] = $name;
       echo '<script>alert("Login successful , welcome.")</script>';
 
       //org lobby

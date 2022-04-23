@@ -45,7 +45,10 @@
          var chart = new google.visualization.PieChart(document.getElementById('pieDiv'));
 
          chart.draw(data, options);
+
        }
+
+
 
        function drawLineGraph() {
         // Set Data
@@ -104,9 +107,7 @@
 
               var chart = new google.visualization.LineChart(document.getElementById('lineGraphDiv'));
               chart.draw(data, options);
-        }});
-
-
+            }});
         }
      </script>
 
@@ -132,13 +133,14 @@
     </nav>
 
     <?php include 'adminDashDisplay/adminDashboardTop3.php';?>
+        <?php include 'adminDashDisplay/adminDashboardLine3Box.php';?>
+        <br/><br/><br/>
     <?php include 'adminDashDisplay/adminDashboardTable2.php';?>
 
     </div>
 
     <?php include 'adminDashDisplay/piechart.php';?>
     <?php include 'adminDashDisplay/lineGraph.php';?>
-    <?php include 'adminDashDisplay/adminDashboardLine3Box.php';?>
 
   </section>
 
