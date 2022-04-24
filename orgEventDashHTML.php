@@ -42,6 +42,21 @@
       $(document).ready(function() {
 
 
+        $("#monthReportBtn").click(function(){
+
+
+          $.ajax({
+            type: "POST",
+            url:"generateMonthReport.php",
+            success:function(result){
+              window.location.href = "orgEventDashHTML.php";
+              alert("The month KPI report has been generate, please check your folder. It named by XXMonthReport");
+
+          }});
+
+        });
+
+
         $("#t #btnAnswer").click(function(){
 
           var applicantID = $(this).parents('tr').find("td:eq(4)").text();
@@ -63,7 +78,7 @@
             url:"generateSingleReport.php",
             success:function(result){
               window.location.href = "orgEventDashHTML.php";
-              alert("Report has been generate, lease check your folder.");
+              alert("Report has been generate, please check your folder. It named by your event Name.");
           }});
 
 
@@ -94,7 +109,7 @@
                         Export Event Report
                     </button>
 
-                    <button id="monthReportBtn" style="padding:10px;" type="button" class="btn btn-sm noBorder theme-color8 btn-smartform3">
+                    <button id="monthReportBtn" style="padding:10px;"class="btn btn-sm noBorder theme-color8 btn-smartform3">
                         Export KPI Month Report
                     </button>
                 </div>
