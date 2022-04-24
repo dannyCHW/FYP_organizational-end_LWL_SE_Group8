@@ -21,6 +21,20 @@
     transition: all 0.3s ease-in;
     }
     </style>
+
+    <script>
+      $(document).ready(function() {
+
+
+        $("#btnBack").click(function(){
+          window.location.href = "loginHTML.php";
+        });
+
+
+
+      });
+
+    </script>
    </head>
 <body>
 
@@ -40,7 +54,6 @@
       			<div class="roti">
 			        	<h1>Back</h1>
 				        <button id="btnBack" type="button" name="valid">Back To Front Page</button><br />
-				        <p><a href="#">Forgot Password</a> <a href="#">Help</a></p>
             </div>
     		</div>
       </div>

@@ -13,12 +13,6 @@ echo"
             </a>
           </li>
           <li>
-            <a href='adminCreateFormHTML.php'>
-              <i class='bx bx-box' ></i>
-              <span class='links_name'>Create Welfare</span>
-            </a>
-          </li>
-          <li>
             <a href='adminUserManagementHTML.php'>
               <i class='bx bx-pie-chart-alt-2' ></i>
               <span class='links_name'>User Management</span>
@@ -37,11 +31,18 @@ echo"
             </a>
           </li>
           <li>
+            <a href='adminGenReportHTML.php'>
+              <i class='bx bx-user' ></i>
+              <span class='links_name'>Generate Report</span>
+            </a>
+          </li>
+          <li>
             <a href='adminProfileHTML.php'>
               <i class='bx bx-user' ></i>
               <span class='links_name'>Profile</span>
             </a>
           </li>
+
           <li class='log_out'>
             <a href='./checkSession/adminLogoutSession.php'>
               <i class='bx bx-log-out'></i>
