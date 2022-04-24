@@ -128,7 +128,7 @@
                             </label>
                             <div class="form-holder">
                                 <div class="input-group" style="min-width: 20vw;">
-                                    <select id="type_" class="type_" aria-label=".form-select-sm example" required>
+                                    <!-- <select id="type_" class="type_" aria-label=".form-select-sm example" required>
                                         <option value="NA" selected>Type</option>
                                         <option value="medical" selected>Medical</option>
                                         <option value="transportation" selected>Transportation</option>
@@ -136,7 +136,7 @@
                                         <option value="activity" selected>Activity</option>
                                         <option value="public welfare" selected>Public welfare</option>
                                         <option value="other" selected>Other</option>
-                                    </select>
+                                    </select> -->
                                 </div>
                             </div>
                         </div>
@@ -358,7 +358,7 @@
             var tmp_dateEnd = $('#dateEnd').val();
             var tmp_money = $('#amountOfMoney').val();
             var tmp_terms = $('#terms').val();
-            var tmp_type = $('#type_').val();
+            
 
             $("#recipeTableBody").children().each(function(index) {
 
@@ -422,7 +422,6 @@
                 money: tmp_money,
                 terms: tmp_terms,
                 autoFillOptions: basicInfo,
-                type: tmp_type,
                 questionList: questionArray
             };
 

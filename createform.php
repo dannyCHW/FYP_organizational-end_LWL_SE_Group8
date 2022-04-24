@@ -18,7 +18,6 @@ $dateStart = $_POST['dateStart'];
 $dateEnd = $_POST['dateEnd'];
 $money = $_POST['money'];
 $terms = $_POST['terms'];
-$type = $_POST['type'];
 $tmp_autoOptions = json_encode($_POST['autoFillOptions']);
 $autoFillOptions = "{autoFillOptions:".$tmp_autoOptions."}";
 $questionList = $_POST['questionList'];
@@ -39,8 +38,7 @@ $service_Doc_data = [
     'terms' => $terms,
     'autoFillOptions' => $autoFillOptions,
     'status' => 'unVerify',
-    'posterImg' => 'none',
-    'type' => $type
+    'posterImg' => 'none'
 ];
 
 $addedDocRef_service = $db->collection('service')->add($service_Doc_data);
