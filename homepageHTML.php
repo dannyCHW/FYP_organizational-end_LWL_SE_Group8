@@ -79,7 +79,7 @@
             window.location.href = 'http://127.0.0.1/fpy_github/signupHTML.php?#';
           });
           $("#btnLogin").click(function() {
-            window.location.href = 'http://127.0.0.1/fpy_github/loginHTML.php?#';
+            window.location.href = 'loginHTML.php';
           });
           $("#logo").click(function() {
             window.location.href = 'http://127.0.0.1/fpy_github/homepageHTML.php?#';

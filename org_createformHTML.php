@@ -3,7 +3,7 @@
 
 <head>
     <?php include 'format/HTMLheader.php'; ?>
-        <link rel="stylesheet" href="checkboxCss.css">
+    <link rel="stylesheet" href="checkboxCss.css">
 </head>
 
 <body style="background-color: #eee8e5;">
@@ -128,8 +128,15 @@
                             </label>
                             <div class="form-holder">
                                 <div class="input-group" style="min-width: 20vw;">
-                                    <input type="file" class="form-control form-color2" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept=".jpg, .jpeg, .png, .tiff, .svg" required>
-                                    <!-- <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button> -->
+                                    <select id="type_" class="type_" aria-label=".form-select-sm example" required>
+                                        <option value="NA" selected>Type</option>
+                                        <option value="medical" selected>Medical</option>
+                                        <option value="transportation" selected>Transportation</option>
+                                        <option value="meal" selected>Meal</option>
+                                        <option value="activity" selected>Activity</option>
+                                        <option value="public welfare" selected>Public welfare</option>
+                                        <option value="other" selected>Other</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -196,13 +203,11 @@
                     <td class="recipe-table__cell">
                         <select class="form-select form-select-sm form-row-h"
                             aria-label=".form-select-sm example" id="{arraySelectID}"
-                            onchange="changeInput('{arraySelectID}', '{arrayInputID}')"  required>
+                            onchange="changeQtype(this)"  required>
                             <option value="unSelect" selected>Question Types</option>
                             <option value="shortAns">Short Answer</option>
-                            <!-- <option value="hkid">HKID/Passport Number</option> -->
                             <option value="yORn">Yes/No</option>
-
-
+                            <option value="mc">Multiple Choice</option>
                         </select>
                     </td>
                     <td class="recipe-table__cell">
@@ -215,7 +220,7 @@
                             placeholder="Description (Optional)" style="min-height: 10vh;" required></textarea>
                     </td>
                     <td class="recipe-table__cell">
-                        <div id="{arrayInputID}"></div>
+                        <div class="mc"></div>
                     </td>
                     <td class="recipe-table__cell">
                         <button class="recipe-table__del-row-btn form-row-h" >x</button>
@@ -227,6 +232,13 @@
     </div>
 
 </body>
+
+<script id='mc_option' type="text/template">
+    <input type='text' placeholder='option 1' class='mc_option_1' /><br class='noCount' />
+    <input type='text' placeholder='option 2' class='mc_option_2' /><br class='noCount' />
+    <input type='text' placeholder='option 3' class='mc_option_3' /><br class='noCount' />
+    <input type='text' placeholder='option 4' class='mc_option_4' /><br class='noCount' />
+</script>
 
 <script>
     //originated from createform.js---- {
@@ -346,6 +358,7 @@
             var tmp_dateEnd = $('#dateEnd').val();
             var tmp_money = $('#amountOfMoney').val();
             var tmp_terms = $('#terms').val();
+            var tmp_type = $('#type_').val();
 
             $("#recipeTableBody").children().each(function(index) {
 
@@ -358,14 +371,41 @@
                 //question description
                 var tmp_question_description = $(this).children().siblings().eq(3).children().val();
 
-                var jsonArg = {
-                    question_index: tmp_question_index,
-                    question_type: tmp_question_type,
-                    question_self: tmp_question_itself,
-                    question_description: tmp_question_description
-                };
+                var jsonArg = null;
+
+                if (tmp_question_type == 'mc') {
+                    var mc_option = '';
+
+                    $(this).children().siblings().eq(4).children().children().each(function() {
+                        mc_option += ($(this).val());
+                        if (($(this).attr('class') == 'noCount')) {
+                            mc_option += '|';
+                        }
+                    });
+
+                    jsonArg = {
+                        question_index: tmp_question_index,
+                        question_type: tmp_question_type,
+                        question_self: tmp_question_itself,
+                        question_description: tmp_question_description,
+                        question_mcOption: mc_option
+                    };
+
+                } else {
+
+                    jsonArg = {
+                        question_index: tmp_question_index,
+                        question_type: tmp_question_type,
+                        question_self: tmp_question_itself,
+                        question_description: tmp_question_description
+                    };
+
+                }
+
+                //alert(JSON.stringify(jsonArg));
 
                 questionArray.push(jsonArg);
+
             });
 
 
@@ -382,6 +422,7 @@
                 money: tmp_money,
                 terms: tmp_terms,
                 autoFillOptions: basicInfo,
+                type: tmp_type,
                 questionList: questionArray
             };
 
@@ -392,7 +433,7 @@
                 data: passData,
                 cache: false,
                 success: function(data) {
-                    alert('Service created.');
+                    //alert('Service created.');
                     window.location.href = 'form_idHTML.php?serviceID=' + data;
                 }
             });
@@ -402,6 +443,16 @@
 
     function sending() {
         alert('pls wait for a second');
+    }
+
+    function changeQtype(prod) {
+        //var tmp = $(prod).parent().siblings().children('.mc')
+        //alert($(prod).val());
+        if ($(prod).val() == 'mc') {
+            $(prod).parent().siblings().children('.mc').append($('#mc_option').html());
+        } else {
+            $(prod).parent().siblings().children('.mc').children().remove();
+        }
     }
 
 
