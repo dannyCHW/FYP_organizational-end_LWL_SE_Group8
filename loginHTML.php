@@ -34,16 +34,9 @@
     </style>
     <script>
     $( document ).ready(function() {
-      $("#singleReportBtn").click(function(){
+      $("#jumpAdmin").click(function(){
 
-        $.ajax({
-          type: "POST",
-          url:"generateSingleReport.php",
-          success:function(result){
-            window.location.href = "orgEventDashHTML.php";
-            alert("Report has been generate, please check your folder. It named by your event Name.");
-        }});
-
+        window.location.href = "adminLoginHTML.php";
 
       });
     });
@@ -61,7 +54,7 @@
             <p>
                 <label for="uid" style="color:#B19F97;">Email:</label>
                 <input type="text" name="email" class="form-control" required>
-                <label style="font-size:80%; color:#2715FF;" id='jumpAdmin'><a href="" style="text-decoration: none;">Admin Login</a></label>
+                <label style="font-size:80%; color:#2715FF;" id='jumpAdmin'><a style="text-decoration: none;">Admin Login</a></label>
             </p>
 
             <p>

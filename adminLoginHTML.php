@@ -38,8 +38,8 @@
     		</div>
     		<div class="cms">
       			<div class="roti">
-			        	<h1>CMS</h1>
-				        <button id="valid" type="button" name="valid">Valid</button><br />
+			        	<h1>Back</h1>
+				        <button id="btnBack" type="button" name="valid">Back To Front Page</button><br />
 				        <p><a href="#">Forgot Password</a> <a href="#">Help</a></p>
             </div>
     		</div>
