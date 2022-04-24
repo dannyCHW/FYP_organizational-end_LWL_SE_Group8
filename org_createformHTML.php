@@ -113,7 +113,7 @@
                         <br>
                         <div class="form-row">
                             <div class="col-1"></div>
-                            <label class="col-2 col-form-label form-color">Event Topic Type<br>
+                            <label class="col-2 col-form-label form-color"><br>
                             </label>
                             <div class="form-holder">
                                 <div class="input-group" style="min-width: 20vw;">
@@ -273,8 +273,7 @@
         //check for empty required field
         if (!$('#serviceName').val() ||
             !$('#summary').val() ||
-            !$('#target').val() ||
-            !$('#terms').val()) {
+            !$('#target').val()) {
             haveNull = true;
         }
 
@@ -346,7 +345,6 @@
             var tmp_dateStart = $('#dateStart').val();
             var tmp_dateEnd = $('#dateEnd').val();
             var tmp_money = $('#amountOfMoney').val();
-            var tmp_terms = $('#terms').val();
             
 
             $("#recipeTableBody").children().each(function(index) {
@@ -409,7 +407,6 @@
                 dateStart: tmp_dateStart,
                 dateEnd: tmp_dateEnd,
                 money: tmp_money,
-                terms: tmp_terms,
                 autoFillOptions: basicInfo,
                 questionList: questionArray
             };
