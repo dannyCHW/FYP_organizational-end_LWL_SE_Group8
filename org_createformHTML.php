@@ -109,22 +109,11 @@
                                 <input type="number" id="amountOfMoney" placeholder="HK$" class="form-control form-color2" required>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="col-1"></div>
-                            <div class="col-2">
-                                <p class="text-start form-color">*Privacy Policy & Disclaimer</p>
-                            </div>
-                            <div class="col-1"></div>
-                            <div class="form-holder">
-                                <textarea name="" id="terms" class="form-control form-color2" style="height: 100px; min-height:100px;" required></textarea>
-                            </div>
-                        </div>
 
                         <br>
                         <div class="form-row">
                             <div class="col-1"></div>
-                            <label class="col-2 col-form-label form-color">^Attachment<br>
-                                <p class="fw-lighter">Promotional Materials</p>
+                            <label class="col-2 col-form-label form-color">Event Topic Type<br>
                             </label>
                             <div class="form-holder">
                                 <div class="input-group" style="min-width: 20vw;">
@@ -171,11 +160,11 @@
                             <div class="recipe__ingredients">
                                 <!-- Auto Fill option here -->
                                 <h4>Basic Infomation</h4></br>
-                                <input type="checkbox" value="hkid" id="cb_hkid" />HKID number &nbsp;
+                                <input type="checkbox" value="hkid" id="cb_hkid" checked disabled/>HKID number &nbsp;
+                                <input type="checkbox" value="chName" id="cb_chName"  checked disabled/>Chinese name &nbsp;
+                                <input type="checkbox" value="gender" id="cb_gender"  checked disabled/>Gender &nbsp;
                                 <input type="checkbox" value="engName" id="cb_engName" />English name &nbsp;
-                                <input type="checkbox" value="chName" id="cb_chName" />Chinese name &nbsp;
                                 <input type="checkbox" value="birthday" id="cb_birthday" />Birthday &nbsp;
-                                <input type="checkbox" value="gender" id="cb_gender" />Gender &nbsp;
                                 <!-- Auto Fill option here -->
                                 </br>
                                 <hr />

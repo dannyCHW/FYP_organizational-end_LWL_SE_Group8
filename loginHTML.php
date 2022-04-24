@@ -34,7 +34,11 @@
     </style>
     <script>
     $( document ).ready(function() {
+      $("#jumpAdmin").click(function(){
 
+        window.location.href = "adminLoginHTML.php";
+
+      });
     });
       </script>
 </head>
@@ -50,8 +54,7 @@
             <p>
                 <label for="uid" style="color:#B19F97;">Email:</label>
                 <input type="text" name="email" class="form-control" required>
-                <label style="font-size:80%; color:#2715FF;"><a href="#" style="text-decoration: none;">Forgot
-                        Email?</a></label>
+                <label style="font-size:80%; color:#2715FF;" id='jumpAdmin'><a style="text-decoration: none;">Admin Login</a></label>
             </p>
 
             <p>

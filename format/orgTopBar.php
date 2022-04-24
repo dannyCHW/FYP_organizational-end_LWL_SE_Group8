@@ -19,22 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#"><small>Eng</small></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><small>繁</small></a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="org_createformHTML.php"><small>Create Form</small></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><small>Management Event</small></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><small>Profile</small></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><small>KPI Report</small></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./checkSession/logoutSession.php"><small>Logout</small></a>

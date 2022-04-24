@@ -21,11 +21,25 @@
     transition: all 0.3s ease-in;
     }
     </style>
+
+    <script>
+      $(document).ready(function() {
+
+
+        $("#btnBack").click(function(){
+          window.location.href = "loginHTML.php";
+        });
+
+
+
+      });
+
+    </script>
    </head>
 <body>
 
 <div id="warp">
-  Monotone Admin Login CSS
+  &nbsp;Smart Form - Admin Login &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     	<div class="admin">
 			      <div class="rota">
 				        <h1>ADMIN</h1>
@@ -38,9 +52,8 @@
     		</div>
     		<div class="cms">
       			<div class="roti">
-			        	<h1>CMS</h1>
-				        <button id="valid" type="button" name="valid">Valid</button><br />
-				        <p><a href="#">Forgot Password</a> <a href="#">Help</a></p>
+			        	<h1>Back</h1>
+				        <button id="btnBack" type="button" name="valid">Back To Front Page</button><br />
             </div>
     		</div>
       </div>

@@ -26,6 +26,20 @@
 
       });
 
+      $("#btnReport").click(function(){
+
+
+        $.ajax({
+          type: "POST",
+          url:"generateMonthReport.php",
+          success:function(result){
+            window.location.href = "orgLobbyHTML.php";
+            alert("The month KPI report has been generate, please check your folder. It named by XXMonthReport");
+
+        }});
+
+      });
+
     });
 
   </script>
@@ -55,6 +69,12 @@
               <a id="btnCreateForm" class="btn btn-primary btn-lg px-4" style="background-color: #987468;">Create
                 Your
                 Welfare</a>
+            </div>
+            <p class="fs-5 col-md-8">Generate Month KPI Report</p>
+            <div class="mb-5">
+              <a id="btnReport" class="btn btn-primary btn-lg px-4" style="background-color: #987468;">
+                Generate Month Report
+              </a>
             </div>
           </div>
           <div class="col">

@@ -4,7 +4,7 @@
     <div class='row'>
         <div class='col-8'>
             <div class='numbers'>
-                <p class='text-sm mb-0 text-uppercase font-weight-bold'>The amount involved
+                <p class='text-sm mb-0 text-uppercase font-weight-bold'>Total Cost
                 </p>
                 <h5 class='font-weight-bolder'>
                   ".$_SESSION['dash_money']."
