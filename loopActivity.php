@@ -63,8 +63,6 @@ foreach ($documents as $documents) {
                 <form method='POST' action='orgEventDashHTML.php'>
                   <button type='submit' id='btnSub'class='btn btn-sm btn-outline-secondary' value=".$serviceID.">View</button>
                 </form>
-
-                <button type='button' class='btn btn-sm btn-outline-secondary'>Edit</button>
                 <button id='uploadImg' type='button' class='uploadImg'>Upload Poster</button>
                 <p hidden id='serviceID'>".$serviceID."</p>
                 <p hidden id='imgName'>".$imgName."</p>

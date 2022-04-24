@@ -164,11 +164,11 @@
                             <div class="recipe__ingredients">
                                 <!-- Auto Fill option here -->
                                 <h4>Basic Infomation</h4></br>
-                                <input type="checkbox" value="hkid" id="cb_hkid" />HKID number &nbsp;
+                                <input type="checkbox" value="hkid" id="cb_hkid" checked disabled/>HKID number &nbsp;
+                                <input type="checkbox" value="chName" id="cb_chName"  checked disabled/>Chinese name &nbsp;
+                                <input type="checkbox" value="gender" id="cb_gender"  checked disabled/>Gender &nbsp;
                                 <input type="checkbox" value="engName" id="cb_engName" />English name &nbsp;
-                                <input type="checkbox" value="chName" id="cb_chName" />Chinese name &nbsp;
                                 <input type="checkbox" value="birthday" id="cb_birthday" />Birthday &nbsp;
-                                <input type="checkbox" value="gender" id="cb_gender" />Gender &nbsp;
                                 <!-- Auto Fill option here -->
                                 </br>
                                 <hr />

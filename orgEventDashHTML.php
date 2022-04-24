@@ -24,16 +24,26 @@
       google.charts.setOnLoadCallback(drawLineGraph);
       function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Government Welfare', 4],
-          ['NGO Activities',12]
-        ]);
+        $.ajax({
+          type: "POST",
+          url:"orgDashBoxHTML/piechart.php",
+          dataType: 'json',
+          success:function(result){
 
-        var options = {'title':'Applicants', 'width':400, 'height':400};
+            var male = result.a;
+            var female = result.b;
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, options);
+            var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Male', male],
+              ['Female',female]
+            ]);
+
+            var options = {'title':'Applicants Gender', 'width':400, 'height':400};
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+              chart.draw(data, options);
+        }});
       }
 
     </script>
@@ -131,234 +141,6 @@
 
     <div class="tab-content theme-bg-color8 theme-color6 navbarRadiusBorder addShadow" id="nav-tabContent">
 
-        <div class="tab-pane fade show active" id="nav-dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">
-
-            <main class="main-content">
-                <div class="container-fluid py-4">
-
-                    <div class="row">
-                        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                            <div class="card">
-                                <div class="card-body p-3">
-                                  <?php include 'orgDashBoxHTML/dashtop1.php'; ?>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                            <div class="card">
-                                <div class="card-body p-3">
-                                  <?php include 'orgDashBoxHTML/dashtop2.php'; ?>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                            <div class="card">
-                                <div class="card-body p-3">
-                                  <?php  include 'orgDashBoxHTML/dashtop3.php'; ?>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6">
-                            <div class="card">
-                                <div class="card-body p-3">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <div class="numbers">
-                                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Approvals</p>
-                                                <h5 class="font-weight-bolder">
-                                                    1000
-                                                </h5>
-                                                <p class="mb-0">
-                                                    <span class="text-danger text-sm font-weight-bolder">-10%</span>
-                                                    than last month
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <div>
-                                                <span class="material-icons">check_box</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="row mt-4">
-                      <?php include 'orgDashBoxHTML/applicantDetail.php'; ?>
-                        <div class="col-lg-5">
-                            <!-- chart -->
-                            <div class="card card-carousel overflow-hidden h-100 p-0">
-                                <div id="piechart"></div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-4">
-                        <div class="col">
-                            <div class="card ">
-                                <div class="card-header">
-                                    <div class="d-flex justify-content-between">
-                                        <h6 class="mb-2"><span class="material-icons inline_icon">info</span> Other Information</h6>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table align-items-center ">
-                                        <tbody>
-                                            <tr>
-                                                <td class="w-30">
-                                                    <div class="d-flex px-2 py-1 align-items-center">
-                                                        <div class="ms-4">
-                                                            <p class="text-xs font-weight-bold mb-0">Applicant Type:</p>
-                                                            <h6 class="text-sm mb-0">Elderly</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Applicants:</p>
-                                                        <h6 class="text-sm mb-0">3000</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Involed Amount:</p>
-                                                        <h6 class="text-sm mb-0">$430,900</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle text-sm">
-                                                    <div class="col text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Approval Rate:</p>
-                                                        <h6 class="text-sm mb-0">79.9%</h6>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="w-30">
-                                                    <div class="d-flex px-2 py-1 align-items-center">
-                                                        <div class="ms-4">
-                                                            <p class="text-xs font-weight-bold mb-0">Applicant Type:</p>
-                                                            <h6 class="text-sm mb-0">Low educated people</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Applicants:</p>
-                                                        <h6 class="text-sm mb-0">1500</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Involed Amount:</p>
-                                                        <h6 class="text-sm mb-0">$230,900</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle text-sm">
-                                                    <div class="col text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Approval Rate:</p>
-                                                        <h6 class="text-sm mb-0">70.9%</h6>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="w-30">
-                                                    <div class="d-flex px-2 py-1 align-items-center">
-                                                        <div class="ms-4">
-                                                            <p class="text-xs font-weight-bold mb-0">Applicant Type:</p>
-                                                            <h6 class="text-sm mb-0">New immigrants</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Applicants:</p>
-                                                        <h6 class="text-sm mb-0">500</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Involed Amount:</p>
-                                                        <h6 class="text-sm mb-0">$90,900</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle text-sm">
-                                                    <div class="col text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Approval Rate:</p>
-                                                        <h6 class="text-sm mb-0">69.9%</h6>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="w-30">
-                                                    <div class="d-flex px-2 py-1 align-items-center">
-                                                        <div class="ms-4">
-                                                            <p class="text-xs font-weight-bold mb-0">Applicant Type:</p>
-                                                            <h6 class="text-sm mb-0">Minorities</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Applicants:</p>
-                                                        <h6 class="text-sm mb-0">500</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Involed Amount:</p>
-                                                        <h6 class="text-sm mb-0">$90,900</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle text-sm">
-                                                    <div class="col text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">Approval Rate:</p>
-                                                        <h6 class="text-sm mb-0">59.9%</h6>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </main>
-
-            <div class="text-center small bg-secondary theme-color8">- End of Report -</div>
-
-        </div>
-
-
-        <div class="tab-pane fade d-flex justify-content-center" id="nav-view" role="tabpanel"
-            aria-labelledby="nav-view-tab">
-            <!-- Add form view -->
-            <div id="thisFormView"></div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
 
 
 
@@ -382,8 +164,8 @@
                                         Email</p>
                                 </div>
                                 <div class="col-5">
-                                    <p>+852 0000 0000</p>
-                                    <p>cs@xxxxxxxxx.com</p>
+                                    <p>+852 9542 2396</p>
+                                    <p>lwlSeFyp@gmail.com</p>
                                 </div>
                             </div>
                             <small>Need service or support? Start your request now and we’ll find you a
