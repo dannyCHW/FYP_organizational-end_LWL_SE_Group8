@@ -18,11 +18,11 @@ $dateStart = $_POST['dateStart'];
 $dateEnd = $_POST['dateEnd'];
 $money = $_POST['money'];
 $terms = $_POST['terms'];
+$type = $_POST['type'];
 $tmp_autoOptions = json_encode($_POST['autoFillOptions']);
 $autoFillOptions = "{autoFillOptions:".$tmp_autoOptions."}";
 $questionList = $_POST['questionList'];
 
-//echo $autoFillOptions;
 
 require_once 'firebaseConfig.php';
 
@@ -40,7 +40,7 @@ $service_Doc_data = [
     'autoFillOptions' => $autoFillOptions,
     'status' => 'unVerify',
     'posterImg' => 'none',
-    'type' => 'pri'
+    'type' => $type
 ];
 
 $addedDocRef_service = $db->collection('service')->add($service_Doc_data);
@@ -57,12 +57,30 @@ for ($x = 0; $x < sizeof($questionList); $x++) {
     $question_self = $tmp3->question_self;
     $question_description = $tmp3->question_description;
 
-    $question_Doc_data = [
-        'index' => $question_index,
-        'type' => $question_type,
-        'question' => $question_self,
-        'description' => $question_description
-    ];
+    $question_Doc_data;
+    $question_mc_option;
+    if($question_type == "mc"){
+
+        $question_mc_option = $tmp3->question_mcOption;
+
+        $question_Doc_data = [
+            'index' => $question_index,
+            'type' => $question_type,
+            'question' => $question_self,
+            'description' => $question_description,
+            'mcOption' => $question_mc_option
+        ];
+
+    } else {
+
+        $question_Doc_data = [
+            'index' => $question_index,
+            'type' => $question_type,
+            'question' => $question_self,
+            'description' => $question_description
+        ];
+
+    }
 
     $addedDocRef_questions = $db->collection('service/' . $addedDocRef_service->id() . '/questions')->add($question_Doc_data);
 }
