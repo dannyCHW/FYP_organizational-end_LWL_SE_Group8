@@ -141,6 +141,92 @@
 
     <div class="tab-content theme-bg-color8 theme-color6 navbarRadiusBorder addShadow" id="nav-tabContent">
 
+      <div class="tab-pane fade show active" id="nav-dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">
+
+            <main class="main-content">
+                <div class="container-fluid py-4">
+
+                    <div class="row">
+                        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                            <div class="card">
+                                <div class="card-body p-3">
+                                  <?php include 'orgDashBoxHTML/dashtop1.php'; ?>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                            <div class="card">
+                                <div class="card-body p-3">
+                                  <?php include 'orgDashBoxHTML/dashtop2.php'; ?>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                            <div class="card">
+                                <div class="card-body p-3">
+                                  <?php  include 'orgDashBoxHTML/dashtop3.php'; ?>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xl-3 col-sm-6">
+                            <div class="card">
+                                <div class="card-body p-3">
+                                    <?php  include 'orgDashBoxHTML/dashtop4.php'; ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-4">
+                      <?php include 'orgDashBoxHTML/applicantDetail.php'; ?>
+                        <div class="col-lg-5">
+                            <!-- chart -->
+                            <div class="card card-carousel overflow-hidden h-100 p-0">
+                                <div id="piechart"></div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col">
+                            <div class="card ">
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="mb-2"><span class="material-icons inline_icon">info</span> Other Information</h6>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table align-items-center ">
+
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+
+            <div class="text-center small bg-secondary theme-color8">- End of Report -</div>
+
+        </div>
+
+
+        <div class="tab-pane fade d-flex justify-content-center" id="nav-view" role="tabpanel"
+            aria-labelledby="nav-view-tab">
+            <!-- Add form view -->
+            <div id="thisFormView"></div>
+        </div>
+    </div>
+
 
 
 

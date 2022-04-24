@@ -7,9 +7,9 @@ echo"
       </div>
         <ul class='nav-links'>
           <li>
-            <a href='adminDashHTML.php' class='active'>
+            <a href='adminDashHTML.php' >
               <i class='bx bx-grid-alt' ></i>
-              <span class='links_name'>Dashboard</span>
+              <span class='links_name'>Dashboard (Home)</span>
             </a>
           </li>
           <li>

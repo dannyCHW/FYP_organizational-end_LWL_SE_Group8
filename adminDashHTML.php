@@ -28,27 +28,11 @@
 
      <script type='text/javascript'>
        google.charts.load('current', {'packages':['corechart']});
-       google.charts.setOnLoadCallback(drawChart);
        google.charts.setOnLoadCallback(drawLineGraph);
-       function drawChart() {
-
-         var data = google.visualization.arrayToDataTable([
-           ['Task', 'Hours per Day'],
-           ['Government Welfare', 4],
-           ['NGO Event',12]
-         ]);
-
-         var options = {
-           title: 'Gov vs NGO'
-         };
-
-         var chart = new google.visualization.PieChart(document.getElementById('pieDiv'));
-
-         chart.draw(data, options);
-
-       }
+       ///////
 
 
+       ////
 
        function drawLineGraph() {
         // Set Data
@@ -139,7 +123,6 @@
 
     </div>
 
-    <?php include 'adminDashDisplay/piechart.php';?>
     <?php include 'adminDashDisplay/lineGraph.php';?>
 
   </section>
