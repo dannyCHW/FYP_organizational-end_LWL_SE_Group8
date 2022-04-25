@@ -83,7 +83,7 @@
               <th>Org ID</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Document</th>
+
               <th>Accept</th>
               <th>Reject</th>
             </tr>
