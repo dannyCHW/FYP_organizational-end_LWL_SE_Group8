@@ -13,7 +13,7 @@
          text-align: left;
        }
        td button{
-         width: 50%;
+         width: 80px;
          color: #ffffff;
          font-weight: bold;
          background-color:#0A2558;
@@ -83,7 +83,6 @@
               <th>Org ID</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Document</th>
               <th>Accept</th>
               <th>Reject</th>
             </tr>

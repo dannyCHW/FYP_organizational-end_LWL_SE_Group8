@@ -13,7 +13,7 @@
          text-align: left;
        }
        td button{
-         width: 50%;
+         width: 75%;
          color: #ffffff;
          font-weight: bold;
          background-color:#0A2558;
