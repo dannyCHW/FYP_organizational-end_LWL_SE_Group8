@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>Event List-Smart Form</title>
+    <title>Admin Profile-Smart Form</title>
     <link rel="stylesheet" href="adminDashCss.css">
     <link rel="stylesheet" href="css/formInputCSSadmin.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
