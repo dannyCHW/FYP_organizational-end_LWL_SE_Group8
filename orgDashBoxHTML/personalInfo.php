@@ -41,11 +41,22 @@
         if($gender != null){
           echo "<tr><td>Gender:</td><td>$gender</td><tr>";
         }
+        set_error_handler('session_error_handling_function');
+
 
         $obj = json_decode($json);
         $birthday = $obj->{'birthday'};
+        restore_error_handler();
         if($birthday!= null){
           echo "<tr><td>Date Of Birth:</td><td>$birthday</td><tr>";
+        }
+
+        set_error_handler('session_error_handling_function');
+        $obj = json_decode($json);
+        $engName = $obj->{'engName'};
+        restore_error_handler();
+        if($engName!= null){
+          echo "<tr><td>Date Of Birth:</td><td>$engName</td><tr>";
         }
 
         echo "</thead></table></div></div>";

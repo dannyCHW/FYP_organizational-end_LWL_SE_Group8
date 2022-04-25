@@ -15,7 +15,7 @@ foreach ($list as $list) {
       $orgID =  $list->data()['orgID'];
       $email =  $list->data()['email'];
       $phone =  $list->data()['number'];
-      echo"<tr><td>".$orgName."</td><td>".$orgID."</td><td>".$email."</td><td>".$phone."</td><td>"."<button id='document'>Document</button>"."</td><td>"."<button id='accept'>Accept</button>"."</td><td>"."<button id='reject'>Reject</button>"."</td></tr>";
+      echo"<tr><td>".$orgName."</td><td>".$orgID."</td><td>".$email."</td><td>".$phone."</td><td>"."</td><td>"."<button id='accept'>Accept</button>"."</td><td>"."<button id='reject'>Reject</button>"."</td></tr>";
     }else{
     }
   }
