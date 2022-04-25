@@ -79,7 +79,7 @@
 
             var data = google.visualization.arrayToDataTable([
               ['Price', 'Number'],
-              [date7,sum1],[date6,sum2],[date5,sum3],[date4,sum4],[date3,sum5],[date2,sum6],[date1,sum7]
+              [date1,sum1],[date2,sum2],[date3,sum3],[date4,sum4],[date5,sum5],[date6,sum6],[date7,sum7]
               ]);
 
               var options = {
@@ -98,6 +98,7 @@
 
      <script>
        $( document ).ready(function() {
+
        });
      </script>
 
@@ -117,7 +118,7 @@
     </nav>
 
     <?php include 'adminDashDisplay/adminDashboardTop3.php';?>
-        <?php include 'adminDashDisplay/adminDashboardLine3Box.php';?>
+
         <br/><br/><br/>
     <?php include 'adminDashDisplay/adminDashboardTable2.php';?>
 

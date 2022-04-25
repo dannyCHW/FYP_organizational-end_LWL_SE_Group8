@@ -115,7 +115,7 @@ foreach ($documents as $documents) {
        ->setCellValue('V2',$countEvent)
 
        ->mergeCells('S3:U3')
-       ->setCellValue('S2',"Total Applicant")
+       ->setCellValue('S3',"Total Applicant")
        ->mergeCells('V3:Y3')
        ->setCellValue('V3',$totalApllicant)
 

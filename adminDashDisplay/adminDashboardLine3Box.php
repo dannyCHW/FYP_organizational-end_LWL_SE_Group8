@@ -14,6 +14,7 @@
         <div class='box'>
           <div class='right-side'>
           ";
+
       $today = date("Y-m-d");
       $userRef = $db->collection('response');
       $query = $userRef->where('date', '=', $today);
