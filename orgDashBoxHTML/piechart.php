@@ -34,7 +34,7 @@ restore_error_handler();
           $obj = json_decode($json);
           $gender = $obj->{'gender'};
 
-          if($gender == 'M'){
+          if($gender == '男'){
             $male += 1 ;
           }else{
             $female += 1 ;

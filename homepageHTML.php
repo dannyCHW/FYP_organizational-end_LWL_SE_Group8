@@ -122,6 +122,51 @@
                         <button class="button-smartform w3-right" id="btnJoinUs">&nbsp;Join Us!&nbsp;</button>
                     </p>
                     <br><br>
+                    <br>
+
+                <div class="theme-bg-color8 addShadow addSurroundedPadding2" style="border-radius: 2rem 2rem 2rem 2rem;">
+                    <b style="font-size: 125%;" class="theme-color2">About Our Team</b>
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col theme-color5 overflowAuto">
+                            <span>
+                                <img src="img/Samantha.png" class="sth-center" alt="Samantha" style="width:100%;max-width:105px">
+                                <br>
+                                <h6 class="text-center">LAU Wing Yin</h6>
+                            </span>
+                        </div>
+
+                        <div class="col theme-color5 overflowAuto">
+                            <span>
+                                <img src="img/Cinna.png" class="sth-center" alt="Cinna" style="width:100%;max-width:105px">
+                                <br>
+                                <h6 class="text-center">CHEUNG Tsz Yin</h6>
+                            </span>
+                        </div>
+
+                        <div class="col theme-color5 overflowAuto">
+                            <span>
+                                <img src="img/Wenni.png" class="sth-center" alt="Wenni" style="width:100%;max-width:105px">
+                                <br>
+                                <h6 class="text-center">YEUNG Wai Yin</h6>
+                            </span>
+                        </div>
+
+                        <div class="col theme-color5 overflowAuto">
+                            <span>
+                                <img src="img/Cyrus.png" class="sth-center" alt="Cyrus" style="width:100%;max-width:105px">
+                                <br>
+                                <h6 class="text-center">LAU Ka Pui</h6>
+                            </span>
+                        </div>
+                        <br><br><br><br><br><br><br><br>
+                        <p class="text-center theme-color2" style="font-size:90%;">
+                            We are studying Higher Diploma in Creative Media (Web & App).
+                            <br>
+                            Our abilities include HTML5, JS, CSS3, jQuery, Python, PHP, SQL, NoSQL, and Adobe PR, AI, XD, ID...
+                        </p>
+                    </div>
 
                   <br><br><br><br><br><br><br><br><br><br>
                   <p class="w3-center" style="font-size:90%; color:#B58767;"> We are studying Higher Diploma
@@ -142,7 +187,7 @@
 
             <div class="col-5">
                 <p><b>Contact Us</b></p>
-                <p>Phone 852 9542 2311 | Email 200244255@stu.vtc.edu.com</p>
+                <p>Phone 852 xxxx xxxx | Email xxxxx@stu.vtc.edu.com</p>
             </div>
 
             <div class="col-4 offset-1">
